@@ -16,6 +16,7 @@
 		77B39A802B83B97400C31A99 /* VoiceBiteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A7F2B83B97400C31A99 /* VoiceBiteTests.swift */; };
 		77B39A8A2B83B97400C31A99 /* VoiceBiteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A892B83B97400C31A99 /* VoiceBiteUITests.swift */; };
 		77B39A8C2B83B97400C31A99 /* VoiceBiteUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A8B2B83B97400C31A99 /* VoiceBiteUITestsLaunchTests.swift */; };
+		77B39A992B83F2B500C31A99 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A982B83F2B500C31A99 /* HomeScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		77B39A852B83B97400C31A99 /* VoiceBiteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoiceBiteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		77B39A892B83B97400C31A99 /* VoiceBiteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceBiteUITests.swift; sourceTree = "<group>"; };
 		77B39A8B2B83B97400C31A99 /* VoiceBiteUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceBiteUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		77B39A982B83F2B500C31A99 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				77B39A722B83B97300C31A99 /* Persistence.swift */,
 				77B39A742B83B97300C31A99 /* VoiceBite.xcdatamodeld */,
 				77B39A6F2B83B97300C31A99 /* Preview Content */,
+				77B39A982B83F2B500C31A99 /* HomeScreenView.swift */,
 			);
 			path = VoiceBite;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			files = (
 				77B39A762B83B97300C31A99 /* VoiceBite.xcdatamodeld in Sources */,
 				77B39A732B83B97300C31A99 /* Persistence.swift in Sources */,
+				77B39A992B83F2B500C31A99 /* HomeScreenView.swift in Sources */,
 				77B39A6C2B83B97200C31A99 /* ContentView.swift in Sources */,
 				77B39A6A2B83B97200C31A99 /* VoiceBiteApp.swift in Sources */,
 			);
