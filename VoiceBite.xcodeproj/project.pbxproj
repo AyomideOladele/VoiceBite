@@ -1,0 +1,603 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		77B39A6A2B83B97200C31A99 /* VoiceBiteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A692B83B97200C31A99 /* VoiceBiteApp.swift */; };
+		77B39A6C2B83B97200C31A99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A6B2B83B97200C31A99 /* ContentView.swift */; };
+		77B39A6E2B83B97300C31A99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77B39A6D2B83B97300C31A99 /* Assets.xcassets */; };
+		77B39A712B83B97300C31A99 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77B39A702B83B97300C31A99 /* Preview Assets.xcassets */; };
+		77B39A732B83B97300C31A99 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A722B83B97300C31A99 /* Persistence.swift */; };
+		77B39A762B83B97300C31A99 /* VoiceBite.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A742B83B97300C31A99 /* VoiceBite.xcdatamodeld */; };
+		77B39A802B83B97400C31A99 /* VoiceBiteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A7F2B83B97400C31A99 /* VoiceBiteTests.swift */; };
+		77B39A8A2B83B97400C31A99 /* VoiceBiteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A892B83B97400C31A99 /* VoiceBiteUITests.swift */; };
+		77B39A8C2B83B97400C31A99 /* VoiceBiteUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A8B2B83B97400C31A99 /* VoiceBiteUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		77B39A7C2B83B97400C31A99 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 77B39A5E2B83B97200C31A99 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 77B39A652B83B97200C31A99;
+			remoteInfo = VoiceBite;
+		};
+		77B39A862B83B97400C31A99 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 77B39A5E2B83B97200C31A99 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 77B39A652B83B97200C31A99;
+			remoteInfo = VoiceBite;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		77B39A662B83B97200C31A99 /* VoiceBite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceBite.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		77B39A692B83B97200C31A99 /* VoiceBiteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceBiteApp.swift; sourceTree = "<group>"; };
+		77B39A6B2B83B97200C31A99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		77B39A6D2B83B97300C31A99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		77B39A702B83B97300C31A99 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		77B39A722B83B97300C31A99 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		77B39A752B83B97300C31A99 /* VoiceBite.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VoiceBite.xcdatamodel; sourceTree = "<group>"; };
+		77B39A7B2B83B97400C31A99 /* VoiceBiteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoiceBiteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		77B39A7F2B83B97400C31A99 /* VoiceBiteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceBiteTests.swift; sourceTree = "<group>"; };
+		77B39A852B83B97400C31A99 /* VoiceBiteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoiceBiteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		77B39A892B83B97400C31A99 /* VoiceBiteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceBiteUITests.swift; sourceTree = "<group>"; };
+		77B39A8B2B83B97400C31A99 /* VoiceBiteUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceBiteUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		77B39A632B83B97200C31A99 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77B39A782B83B97400C31A99 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77B39A822B83B97400C31A99 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		77B39A5D2B83B97200C31A99 = {
+			isa = PBXGroup;
+			children = (
+				77B39A682B83B97200C31A99 /* VoiceBite */,
+				77B39A7E2B83B97400C31A99 /* VoiceBiteTests */,
+				77B39A882B83B97400C31A99 /* VoiceBiteUITests */,
+				77B39A672B83B97200C31A99 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		77B39A672B83B97200C31A99 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				77B39A662B83B97200C31A99 /* VoiceBite.app */,
+				77B39A7B2B83B97400C31A99 /* VoiceBiteTests.xctest */,
+				77B39A852B83B97400C31A99 /* VoiceBiteUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		77B39A682B83B97200C31A99 /* VoiceBite */ = {
+			isa = PBXGroup;
+			children = (
+				77B39A692B83B97200C31A99 /* VoiceBiteApp.swift */,
+				77B39A6B2B83B97200C31A99 /* ContentView.swift */,
+				77B39A6D2B83B97300C31A99 /* Assets.xcassets */,
+				77B39A722B83B97300C31A99 /* Persistence.swift */,
+				77B39A742B83B97300C31A99 /* VoiceBite.xcdatamodeld */,
+				77B39A6F2B83B97300C31A99 /* Preview Content */,
+			);
+			path = VoiceBite;
+			sourceTree = "<group>";
+		};
+		77B39A6F2B83B97300C31A99 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				77B39A702B83B97300C31A99 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		77B39A7E2B83B97400C31A99 /* VoiceBiteTests */ = {
+			isa = PBXGroup;
+			children = (
+				77B39A7F2B83B97400C31A99 /* VoiceBiteTests.swift */,
+			);
+			path = VoiceBiteTests;
+			sourceTree = "<group>";
+		};
+		77B39A882B83B97400C31A99 /* VoiceBiteUITests */ = {
+			isa = PBXGroup;
+			children = (
+				77B39A892B83B97400C31A99 /* VoiceBiteUITests.swift */,
+				77B39A8B2B83B97400C31A99 /* VoiceBiteUITestsLaunchTests.swift */,
+			);
+			path = VoiceBiteUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		77B39A652B83B97200C31A99 /* VoiceBite */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 77B39A8F2B83B97400C31A99 /* Build configuration list for PBXNativeTarget "VoiceBite" */;
+			buildPhases = (
+				77B39A622B83B97200C31A99 /* Sources */,
+				77B39A632B83B97200C31A99 /* Frameworks */,
+				77B39A642B83B97200C31A99 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VoiceBite;
+			productName = VoiceBite;
+			productReference = 77B39A662B83B97200C31A99 /* VoiceBite.app */;
+			productType = "com.apple.product-type.application";
+		};
+		77B39A7A2B83B97400C31A99 /* VoiceBiteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 77B39A922B83B97400C31A99 /* Build configuration list for PBXNativeTarget "VoiceBiteTests" */;
+			buildPhases = (
+				77B39A772B83B97400C31A99 /* Sources */,
+				77B39A782B83B97400C31A99 /* Frameworks */,
+				77B39A792B83B97400C31A99 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				77B39A7D2B83B97400C31A99 /* PBXTargetDependency */,
+			);
+			name = VoiceBiteTests;
+			productName = VoiceBiteTests;
+			productReference = 77B39A7B2B83B97400C31A99 /* VoiceBiteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		77B39A842B83B97400C31A99 /* VoiceBiteUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 77B39A952B83B97400C31A99 /* Build configuration list for PBXNativeTarget "VoiceBiteUITests" */;
+			buildPhases = (
+				77B39A812B83B97400C31A99 /* Sources */,
+				77B39A822B83B97400C31A99 /* Frameworks */,
+				77B39A832B83B97400C31A99 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				77B39A872B83B97400C31A99 /* PBXTargetDependency */,
+			);
+			name = VoiceBiteUITests;
+			productName = VoiceBiteUITests;
+			productReference = 77B39A852B83B97400C31A99 /* VoiceBiteUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		77B39A5E2B83B97200C31A99 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					77B39A652B83B97200C31A99 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					77B39A7A2B83B97400C31A99 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 77B39A652B83B97200C31A99;
+					};
+					77B39A842B83B97400C31A99 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 77B39A652B83B97200C31A99;
+					};
+				};
+			};
+			buildConfigurationList = 77B39A612B83B97200C31A99 /* Build configuration list for PBXProject "VoiceBite" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 77B39A5D2B83B97200C31A99;
+			productRefGroup = 77B39A672B83B97200C31A99 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				77B39A652B83B97200C31A99 /* VoiceBite */,
+				77B39A7A2B83B97400C31A99 /* VoiceBiteTests */,
+				77B39A842B83B97400C31A99 /* VoiceBiteUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		77B39A642B83B97200C31A99 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77B39A712B83B97300C31A99 /* Preview Assets.xcassets in Resources */,
+				77B39A6E2B83B97300C31A99 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77B39A792B83B97400C31A99 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77B39A832B83B97400C31A99 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		77B39A622B83B97200C31A99 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77B39A762B83B97300C31A99 /* VoiceBite.xcdatamodeld in Sources */,
+				77B39A732B83B97300C31A99 /* Persistence.swift in Sources */,
+				77B39A6C2B83B97200C31A99 /* ContentView.swift in Sources */,
+				77B39A6A2B83B97200C31A99 /* VoiceBiteApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77B39A772B83B97400C31A99 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77B39A802B83B97400C31A99 /* VoiceBiteTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77B39A812B83B97400C31A99 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77B39A8A2B83B97400C31A99 /* VoiceBiteUITests.swift in Sources */,
+				77B39A8C2B83B97400C31A99 /* VoiceBiteUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		77B39A7D2B83B97400C31A99 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 77B39A652B83B97200C31A99 /* VoiceBite */;
+			targetProxy = 77B39A7C2B83B97400C31A99 /* PBXContainerItemProxy */;
+		};
+		77B39A872B83B97400C31A99 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 77B39A652B83B97200C31A99 /* VoiceBite */;
+			targetProxy = 77B39A862B83B97400C31A99 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		77B39A8D2B83B97400C31A99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		77B39A8E2B83B97400C31A99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		77B39A902B83B97400C31A99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"VoiceBite/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ayomideoladele.VoiceBite;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		77B39A912B83B97400C31A99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"VoiceBite/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ayomideoladele.VoiceBite;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		77B39A932B83B97400C31A99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ayomideoladele.VoiceBiteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VoiceBite.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VoiceBite";
+			};
+			name = Debug;
+		};
+		77B39A942B83B97400C31A99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ayomideoladele.VoiceBiteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VoiceBite.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VoiceBite";
+			};
+			name = Release;
+		};
+		77B39A962B83B97400C31A99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ayomideoladele.VoiceBiteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = VoiceBite;
+			};
+			name = Debug;
+		};
+		77B39A972B83B97400C31A99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ayomideoladele.VoiceBiteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = VoiceBite;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		77B39A612B83B97200C31A99 /* Build configuration list for PBXProject "VoiceBite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77B39A8D2B83B97400C31A99 /* Debug */,
+				77B39A8E2B83B97400C31A99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		77B39A8F2B83B97400C31A99 /* Build configuration list for PBXNativeTarget "VoiceBite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77B39A902B83B97400C31A99 /* Debug */,
+				77B39A912B83B97400C31A99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		77B39A922B83B97400C31A99 /* Build configuration list for PBXNativeTarget "VoiceBiteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77B39A932B83B97400C31A99 /* Debug */,
+				77B39A942B83B97400C31A99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		77B39A952B83B97400C31A99 /* Build configuration list for PBXNativeTarget "VoiceBiteUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77B39A962B83B97400C31A99 /* Debug */,
+				77B39A972B83B97400C31A99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		77B39A742B83B97300C31A99 /* VoiceBite.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				77B39A752B83B97300C31A99 /* VoiceBite.xcdatamodel */,
+			);
+			currentVersion = 77B39A752B83B97300C31A99 /* VoiceBite.xcdatamodel */;
+			path = VoiceBite.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 77B39A5E2B83B97200C31A99 /* Project object */;
+}
