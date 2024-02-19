@@ -17,3 +17,4 @@ Made for my Final Year Project CS Bsc.
 ## Bugs
 
 ## Acknowledgments
+<a href="https://www.freepik.com/free-photo/penne-pasta-with-pesto-sauce-zucchini-green-peas-basil-italian-food-top-view-flat-lay_7676329.htm#query=pasta&position=4&from_view=search&track=sph&uuid=ef623c77-f737-4b79-9a51-a73b25afca63">Image by timolina</a> on Freepik
