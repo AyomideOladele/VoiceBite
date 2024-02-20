@@ -17,6 +17,11 @@
 		77B39A8A2B83B97400C31A99 /* VoiceBiteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A892B83B97400C31A99 /* VoiceBiteUITests.swift */; };
 		77B39A8C2B83B97400C31A99 /* VoiceBiteUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A8B2B83B97400C31A99 /* VoiceBiteUITestsLaunchTests.swift */; };
 		77B39A992B83F2B500C31A99 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A982B83F2B500C31A99 /* HomeScreenView.swift */; };
+		77B39A9B2B840FEC00C31A99 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A9A2B840FEC00C31A99 /* SplashScreenView.swift */; };
+		77B39A9D2B84105600C31A99 /* LoginScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A9C2B84105600C31A99 /* LoginScreenView.swift */; };
+		77B39AA72B84188300C31A99 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39AA62B84188300C31A99 /* InputView.swift */; };
+		77B39AA92B8427DB00C31A99 /* SignupScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39AA82B8427DB00C31A99 /* SignupScreenView.swift */; };
+		77B39AAB2B842C4200C31A99 /* SettingsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39AAA2B842C4200C31A99 /* SettingsScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +55,11 @@
 		77B39A892B83B97400C31A99 /* VoiceBiteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceBiteUITests.swift; sourceTree = "<group>"; };
 		77B39A8B2B83B97400C31A99 /* VoiceBiteUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceBiteUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		77B39A982B83F2B500C31A99 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
+		77B39A9A2B840FEC00C31A99 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		77B39A9C2B84105600C31A99 /* LoginScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenView.swift; sourceTree = "<group>"; };
+		77B39AA62B84188300C31A99 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		77B39AA82B8427DB00C31A99 /* SignupScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupScreenView.swift; sourceTree = "<group>"; };
+		77B39AAA2B842C4200C31A99 /* SettingsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,13 +110,14 @@
 		77B39A682B83B97200C31A99 /* VoiceBite */ = {
 			isa = PBXGroup;
 			children = (
-				77B39A692B83B97200C31A99 /* VoiceBiteApp.swift */,
-				77B39A6B2B83B97200C31A99 /* ContentView.swift */,
+				77B39AA12B8412FE00C31A99 /* App */,
+				77B39AA22B84141300C31A99 /* Components */,
+				77B39A9F2B8412A000C31A99 /* Core */,
+				77B39AA32B84153200C31A99 /* Model */,
 				77B39A6D2B83B97300C31A99 /* Assets.xcassets */,
 				77B39A722B83B97300C31A99 /* Persistence.swift */,
 				77B39A742B83B97300C31A99 /* VoiceBite.xcdatamodeld */,
 				77B39A6F2B83B97300C31A99 /* Preview Content */,
-				77B39A982B83F2B500C31A99 /* HomeScreenView.swift */,
 			);
 			path = VoiceBite;
 			sourceTree = "<group>";
@@ -134,6 +145,66 @@
 				77B39A8B2B83B97400C31A99 /* VoiceBiteUITestsLaunchTests.swift */,
 			);
 			path = VoiceBiteUITests;
+			sourceTree = "<group>";
+		};
+		77B39A9F2B8412A000C31A99 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				77B39AA42B84155C00C31A99 /* Authentication */,
+				77B39AA52B84156500C31A99 /* Profile */,
+				77B39AA02B8412AE00C31A99 /* Root */,
+				77B39A9C2B84105600C31A99 /* LoginScreenView.swift */,
+				77B39A9A2B840FEC00C31A99 /* SplashScreenView.swift */,
+				77B39A982B83F2B500C31A99 /* HomeScreenView.swift */,
+				77B39AA82B8427DB00C31A99 /* SignupScreenView.swift */,
+				77B39AAA2B842C4200C31A99 /* SettingsScreenView.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		77B39AA02B8412AE00C31A99 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				77B39A6B2B83B97200C31A99 /* ContentView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		77B39AA12B8412FE00C31A99 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				77B39A692B83B97200C31A99 /* VoiceBiteApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		77B39AA22B84141300C31A99 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				77B39AA62B84188300C31A99 /* InputView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		77B39AA32B84153200C31A99 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		77B39AA42B84155C00C31A99 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		77B39AA52B84156500C31A99 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,11 +337,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77B39AA92B8427DB00C31A99 /* SignupScreenView.swift in Sources */,
 				77B39A762B83B97300C31A99 /* VoiceBite.xcdatamodeld in Sources */,
 				77B39A732B83B97300C31A99 /* Persistence.swift in Sources */,
+				77B39A9D2B84105600C31A99 /* LoginScreenView.swift in Sources */,
 				77B39A992B83F2B500C31A99 /* HomeScreenView.swift in Sources */,
+				77B39AAB2B842C4200C31A99 /* SettingsScreenView.swift in Sources */,
 				77B39A6C2B83B97200C31A99 /* ContentView.swift in Sources */,
+				77B39AA72B84188300C31A99 /* InputView.swift in Sources */,
 				77B39A6A2B83B97200C31A99 /* VoiceBiteApp.swift in Sources */,
+				77B39A9B2B840FEC00C31A99 /* SplashScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

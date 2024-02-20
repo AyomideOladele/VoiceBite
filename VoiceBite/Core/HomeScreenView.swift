@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeScreenView: View {
     var body: some View {
         VStack{
+            
             // App Logo
             Image("AppLogo")
                 .resizable()
@@ -18,8 +19,10 @@ struct HomeScreenView: View {
             // App Title
             Text("VOICEBITE")
                 .foregroundColor(Color("AccentColor"))
-                .padding(.bottom)
                 .font(.system(size: 40))
+            
+            Spacer()
+                .frame(height: 100.0)
             
             // Login Button
             Button(action: { }) {
@@ -31,7 +34,6 @@ struct HomeScreenView: View {
             .foregroundColor(Color("SecondaryAccent"))
             .background(Color("AccentColor"))
             .cornerRadius(15)
-            .padding(.top, 100.0)
             
             // Signup button
             Button(action: { }) {
