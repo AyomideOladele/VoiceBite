@@ -34,3 +34,17 @@ final class VoiceBiteTests: XCTestCase {
     }
 
 }
+
+// Login Tests
+// What happens if password is wrong?
+// What happens if email is wrong?
+
+// Signup Test
+// Does account exist?
+// Checking the password checker works
+// Is email correct format?
+
+
+// Loading recipe
+// Is it the right format?
+// Minimum entry

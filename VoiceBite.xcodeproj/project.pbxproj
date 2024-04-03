@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		770C98712B9F586A00BFADE8 /* BackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C98702B9F586A00BFADE8 /* BackButtonView.swift */; };
 		77B39A6A2B83B97200C31A99 /* VoiceBiteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A692B83B97200C31A99 /* VoiceBiteApp.swift */; };
 		77B39A6C2B83B97200C31A99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A6B2B83B97200C31A99 /* ContentView.swift */; };
 		77B39A6E2B83B97300C31A99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77B39A6D2B83B97300C31A99 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		770C98702B9F586A00BFADE8 /* BackButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonView.swift; sourceTree = "<group>"; };
 		77B39A662B83B97200C31A99 /* VoiceBite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceBite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77B39A692B83B97200C31A99 /* VoiceBiteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceBiteApp.swift; sourceTree = "<group>"; };
 		77B39A6B2B83B97200C31A99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -153,10 +155,7 @@
 				77B39AA42B84155C00C31A99 /* Authentication */,
 				77B39AA52B84156500C31A99 /* Profile */,
 				77B39AA02B8412AE00C31A99 /* Root */,
-				77B39A9C2B84105600C31A99 /* LoginScreenView.swift */,
-				77B39A9A2B840FEC00C31A99 /* SplashScreenView.swift */,
 				77B39A982B83F2B500C31A99 /* HomeScreenView.swift */,
-				77B39AA82B8427DB00C31A99 /* SignupScreenView.swift */,
 				77B39AAA2B842C4200C31A99 /* SettingsScreenView.swift */,
 			);
 			path = Core;
@@ -166,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				77B39A6B2B83B97200C31A99 /* ContentView.swift */,
+				77B39A9A2B840FEC00C31A99 /* SplashScreenView.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -182,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				77B39AA62B84188300C31A99 /* InputView.swift */,
+				770C98702B9F586A00BFADE8 /* BackButtonView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -196,6 +197,8 @@
 		77B39AA42B84155C00C31A99 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				77B39A9C2B84105600C31A99 /* LoginScreenView.swift */,
+				77B39AA82B8427DB00C31A99 /* SignupScreenView.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				77B39AAB2B842C4200C31A99 /* SettingsScreenView.swift in Sources */,
 				77B39A6C2B83B97200C31A99 /* ContentView.swift in Sources */,
 				77B39AA72B84188300C31A99 /* InputView.swift in Sources */,
+				770C98712B9F586A00BFADE8 /* BackButtonView.swift in Sources */,
 				77B39A6A2B83B97200C31A99 /* VoiceBiteApp.swift in Sources */,
 				77B39A9B2B840FEC00C31A99 /* SplashScreenView.swift in Sources */,
 			);

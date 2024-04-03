@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct SignupScreenView: View {
-        @State private var name = ""
-        @State private var email = ""
-        @State private var password = ""
+    @State private var name = ""
+    @State private var email = ""
+    @State private var password = ""
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
             VStack{
@@ -55,24 +56,27 @@ struct SignupScreenView: View {
                 .cornerRadius(15)
                 .padding(.top, 50.0)
                 
-                // Back Button
-                Button(action: { }) {
-                    Text("BACK")
-                        .padding(.vertical, 12.0)
-                        .padding(.horizontal, 20.0)
-                        .font(.system(size: 20, weight: .bold))
+                Spacer()
+                    .frame(height: 100.0)
+                
+                Button {
+                    dismiss()
+                } label: {
+                    HStack(spacing: 3) {
+                        Text("Already have an account?")
+                        Text("Sign in")
+                            .fontWeight(.bold)
+                    }
+                    .font(.system(size: 14))
                 }
-                .foregroundColor(Color("SecondaryAccent"))
-                .background(Color("TertiaryAccent"))
-                .cornerRadius(15)
-                .padding(.top, 100.0)
             }
+            
+        }
     }
-}
-
-
-struct SignupScreenView_Previews: PreviewProvider {
-    static var previews: some View {
-        SignupScreenView()
+    
+    struct SignupScreenView_Previews: PreviewProvider {
+        static var previews: some View {
+            SignupScreenView()
+        }
     }
-}
+
