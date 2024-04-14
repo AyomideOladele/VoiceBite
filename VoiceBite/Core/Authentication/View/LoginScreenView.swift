@@ -7,7 +7,7 @@ import SwiftUI
 struct LoginScreenView: View {
     @State private var email = ""
     @State private var password = ""
-    @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
         NavigationStack {
@@ -40,7 +40,12 @@ struct LoginScreenView: View {
                 
                 
                 // Login Button
-                Button(action: { }) {
+                Button {
+                    Task {
+                       try await viewModel.signIn(withEmail: email, password: password)
+                  }
+                    
+                } label: {
                     Text("LOGIN")
                         .padding(.vertical, 12.0)
                         .padding(.horizontal, 48.0)
@@ -51,33 +56,54 @@ struct LoginScreenView: View {
                 .cornerRadius(15)
                 .padding(.top, 50.0)
                 
-                //Spacer()
+                //Fade button if data entry from user is invalid
+                .disabled(!formIsValid)
+                .opacity(formIsValid ? 1.0 : 0.5)
                 
+                
+                // Spaces login button away from navigation link
                 Spacer()
                     .frame(height: 100.0)
                 
-                //Button {
-                //dismiss()
+                // Navigates to signup page by adding it to the stack
                 NavigationLink {
                     SignupScreenView()
                         .navigationBarBackButtonHidden(true)
                 } label: {
                     HStack(spacing: 3) {
-                        Text("Already have an account?")
-                        Text("Sign in")
+                        Text("Don't have an account?")
+                        Text("Sign up")
                             .fontWeight(.bold)
                     }
                     .font(.system(size: 14))
                 }
             }
             
-            
         }
     }
     
-    struct LoginScreenView_Previews: PreviewProvider {
-        static var previews: some View {
-            LoginScreenView()
-        }
+}
+
+extension LoginScreenView: AuthenticationFormProtocol {
+    var formIsValid: Bool {
+        
+        let emailHasBasicFormat = email.contains("@") && email.contains(".")
+        let passwordHasNumber = password.rangeOfCharacter(from: .decimalDigits) != nil
+        let passwordHasCapitalLetter = password.rangeOfCharacter(from: .uppercaseLetters) != nil
+        let passwordLengthValid = password.count > 8
+        
+        return !email.isEmpty
+        && emailHasBasicFormat
+        && !password.isEmpty
+        && passwordLengthValid
+        && passwordHasCapitalLetter
+        && passwordHasNumber
+        
+    }
+}
+
+struct LoginScreenView_Previews: PreviewProvider {
+    static var previews: some View {
+        LoginScreenView().environmentObject(AuthViewModel())
     }
 }

@@ -6,15 +6,22 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct VoiceBiteApp: App {
-    let persistenceController = PersistenceController.shared
+    @StateObject var viewModel = AuthViewModel()
+    //let persistenceController = PersistenceController.shared
+    
+    init(){
+        FirebaseApp.configure()
+    }
 
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(viewModel)
+                //.environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

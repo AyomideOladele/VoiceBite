@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyAbs5cnj7Yi1G2dZp60mNrEfuPkxfB4TvA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>501236376727</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.ayomideoladele.VoiceBite</string>
+	<key>PROJECT_ID</key>
+	<string>voicebite-648b2</string>
+	<key>STORAGE_BUCKET</key>
+	<string>voicebite-648b2.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:501236376727:ios:2a8ab6807ad6e7c635b5d2</string>
+</dict>
+</plist>

@@ -7,6 +7,7 @@
 
 import XCTest
 @testable import VoiceBite
+import Firebase
 
 final class VoiceBiteTests: XCTestCase {
 
