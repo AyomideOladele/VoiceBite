@@ -11,6 +11,7 @@ import Firebase
 @main
 struct VoiceBiteApp: App {
     @StateObject var viewModel = AuthViewModel()
+    @AppStorage("isDarkMode") private var isDarkMode = false
     //let persistenceController = PersistenceController.shared
     
     init(){
@@ -21,6 +22,7 @@ struct VoiceBiteApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(viewModel)
+                .preferredColorScheme(isDarkMode ? .dark : .light)
                 //.environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

@@ -12,10 +12,9 @@ struct SettingsScreenView: View {
     @State private var textToSpeech = true
     @State private var speechRecognition = true
     @State private var notifications = true
-    @State private var darkMode = false
+    @AppStorage("isDarkMode") private var isDarkMode = false
     
     var body: some View {
-        
         NavigationStack{
             VStack{
                 Text("SETTINGS")
@@ -58,7 +57,7 @@ struct SettingsScreenView: View {
                     HStack{
                         SettingsBoxView(imageName: "moon", title: "Dark Mode", tintColour: .secondary)
                         
-                        Toggle(isOn: $darkMode){}
+                        Toggle(isOn: $isDarkMode) {}
                     }
                     
                     // Back Button

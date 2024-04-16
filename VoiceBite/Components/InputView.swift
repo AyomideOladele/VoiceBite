@@ -19,18 +19,18 @@ struct InputView: View {
                     .padding(.vertical, 5.0)
                     .padding(.horizontal, 10.0)
                     .font(.system(size: 18))
-                    .background(Color( "QuaternaryAccent")
+                    .background(Color("QuaternaryAccent")
                         .opacity(0.1))
-                    .foregroundColor(.black)
+                    .foregroundColor(Color("TextColour"))
                     .cornerRadius(7)
             } else {
                 TextField(placeholder, text: $text)
                     .padding(.vertical, 5.0)
                     .padding(.horizontal, 10.0)
                     .font(.system(size: 18))
-                    .background(Color( "QuaternaryAccent")
+                    .background(Color("QuaternaryAccent")
                         .opacity(0.1))
-                    .foregroundColor(.black)
+                    .foregroundColor(Color("TextColour"))
                     .cornerRadius(7)
             }
         }

@@ -1,6 +1,8 @@
 //  LoginScreenView.swift
 //  VoiceBite
 //  Created by Ayomide Oladele on 19/02/2024.
+//
+// Development Goal: Add error message and screen shake for when login details are incorrect
 
 import SwiftUI
 

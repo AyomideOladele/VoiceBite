@@ -10,11 +10,13 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var viewModel: AuthViewModel
+    //let recipeManager = RecipeManager()
 
     var body: some View {
         Group {
             if viewModel.userSession != nil {
-                AccountView()
+                RecipesSearchView(recipeManager: RecipeManager())
+                //AccountView()
             } else {
                 LoginScreenView()
             }

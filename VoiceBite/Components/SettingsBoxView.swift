@@ -24,7 +24,7 @@ struct SettingsBoxView: View {
             
             Text(title)
                 .font(.subheadline)
-                .foregroundColor(.black)
+                .foregroundColor(Color("TextColour"))
         }
     }
 }

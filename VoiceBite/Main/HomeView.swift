@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HomeScreenView: View {
+struct HomeView: View {
     var body: some View {
         NavigationStack{
             VStack{
@@ -66,7 +66,7 @@ struct HomeScreenView: View {
     
     struct HomeScreenView_Previews: PreviewProvider {
         static var previews: some View {
-            HomeScreenView()
+            HomeView()
         }
     }
 }

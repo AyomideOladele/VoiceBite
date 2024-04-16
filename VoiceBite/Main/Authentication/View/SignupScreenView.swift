@@ -49,12 +49,12 @@ struct SignupScreenView: View {
                                 Image(systemName: "checkmark.circle.fill")
                                     .imageScale(.large)
                                     .fontWeight(.bold)
-                                    .foregroundColor(Color(.systemRed))
+                                    .foregroundColor(Color(.systemGreen))
                             } else {
                                 Image(systemName: "xmark.circle.fill")
                                     .imageScale(.large)
                                     .fontWeight(.bold)
-                                    .foregroundColor(Color(.systemGreen))
+                                    .foregroundColor(Color(.systemRed))
                             }
                         }
                     }

@@ -45,7 +45,9 @@ struct AccountView: View {
                                 }
                             
                             Button {
-                                print("Delete Account...")
+                                Task {
+                                    await viewModel.deleteAccount()
+                                }
                             } label: {
                                 SettingsBoxView(imageName: "xmark.circle.fill", title: "Delete Account", tintColour: .red)
                                 }
@@ -59,6 +61,6 @@ struct AccountView: View {
 
 struct AccountView_Previews: PreviewProvider {
     static var previews: some View {
-        AccountView()
+        AccountView() //.environmentObject(AuthViewModel())
     }
 }
