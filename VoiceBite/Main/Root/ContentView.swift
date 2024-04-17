@@ -13,11 +13,14 @@ struct ContentView: View {
 
     var body: some View {
         Group {
+            
+            // Displays recipe search if user is logged in
             if viewModel.userSession != nil {
-                RecipesSearchView(recipeManager: RecipeManager())
-                //AccountView()
+                RecipesDirectoryView(recipeManager: RecipeManager())
+                
+            // Otherwise, displays login screen
             } else {
-                LoginScreenView()
+                LoginView()
             }
         }
     }

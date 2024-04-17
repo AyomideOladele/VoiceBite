@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct InputView: View {
+struct InputBox: View {
     @Binding var text: String
     let placeholder: String
     var isSecureField = false
@@ -38,7 +38,7 @@ struct InputView: View {
     
     struct InputView_Previews: PreviewProvider {
         static var previews: some View {
-            InputView(text: .constant(""), placeholder: "placeholder")
+            InputBox(text: .constant(""), placeholder: "placeholder")
         }
     }
 }

@@ -6,7 +6,7 @@
 
 import SwiftUI
 
-struct LoginScreenView: View {
+struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
     @EnvironmentObject var viewModel: AuthViewModel
@@ -28,11 +28,11 @@ struct LoginScreenView: View {
                 
                 // Form Fields
                 VStack(spacing: 24){
-                    InputView(text: $email,
+                    InputBox(text: $email,
                               placeholder: "Email")
                     .autocapitalization(.none)
                     
-                    InputView(text: $password,
+                    InputBox(text: $password,
                               placeholder: "Password",
                               isSecureField: true)
                     
@@ -69,7 +69,7 @@ struct LoginScreenView: View {
                 
                 // Navigates to signup page by adding it to the stack
                 NavigationLink {
-                    SignupScreenView()
+                    SignUpView()
                         .navigationBarBackButtonHidden(true)
                 } label: {
                     HStack(spacing: 3) {
@@ -86,7 +86,7 @@ struct LoginScreenView: View {
     
 }
 
-extension LoginScreenView: AuthenticationFormProtocol {
+extension LoginView: AuthenticationFormProtocol {
     var formIsValid: Bool {
         
         let emailHasBasicFormat = email.contains("@") && email.contains(".")
@@ -104,8 +104,8 @@ extension LoginScreenView: AuthenticationFormProtocol {
     }
 }
 
-struct LoginScreenView_Previews: PreviewProvider {
+struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginScreenView().environmentObject(AuthViewModel())
+        LoginView().environmentObject(AuthViewModel())
     }
 }

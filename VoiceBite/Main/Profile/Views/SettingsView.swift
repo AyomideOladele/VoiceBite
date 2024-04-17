@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SettingsScreenView: View {
+struct SettingsView: View {
     @State private var soundVolume = 50.0
     @State private var textToSpeech = true
     @State private var speechRecognition = true
@@ -79,6 +79,6 @@ struct SettingsScreenView: View {
 
 struct SettingsScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsScreenView()
+        SettingsView()
     }
 }

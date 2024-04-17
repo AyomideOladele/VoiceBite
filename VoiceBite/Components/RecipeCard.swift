@@ -49,7 +49,9 @@ struct RecipeCard: View {
 
 struct RecipeCard_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeCard(recipe: Recipe(title: "RecipeTitle 1", ingredients: ["1", "2"], instructions: ["step 1", "step 2", "step 3", "step 4", "step 5"], imageName: "AppLogo"))
+        
+            let manager = RecipeManager()
+            RecipeDetailsView(recipe: manager.recipes[0])
     }
 }
 

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SignupScreenView: View {
+struct SignUpView: View {
     @State private var fullname = ""
     @State private var email = ""
     @State private var password = ""
@@ -26,20 +26,20 @@ struct SignupScreenView: View {
                 // Form Fields
                 VStack(spacing: 24){
                     
-                    InputView(text: $fullname,
+                    InputBox(text: $fullname,
                               placeholder: "Full Name")
                     .autocapitalization(.none)
                     
-                    InputView(text: $email,
+                    InputBox(text: $email,
                               placeholder: "Email")
                     .autocapitalization(.none)
                     
-                    InputView(text: $password,
+                    InputBox(text: $password,
                               placeholder: "Password",
                               isSecureField: true)
                     
                     ZStack(alignment: .trailing) {
-                        InputView(text: $confirmPassword,
+                        InputBox(text: $confirmPassword,
                                  placeholder: "Re-enter Password",
                                  isSecureField: true)
                         
@@ -104,7 +104,7 @@ struct SignupScreenView: View {
         }
     }
 
-extension SignupScreenView: AuthenticationFormProtocol {
+extension SignUpView: AuthenticationFormProtocol {
     var formIsValid: Bool {
         
         let emailHasBasicFormat = email.contains("@") && email.contains(".")
@@ -126,7 +126,7 @@ extension SignupScreenView: AuthenticationFormProtocol {
     
     struct SignupScreenView_Previews: PreviewProvider {
         static var previews: some View {
-            SignupScreenView().environmentObject(AuthViewModel())
+            SignUpView().environmentObject(AuthViewModel())
         }
     }
 

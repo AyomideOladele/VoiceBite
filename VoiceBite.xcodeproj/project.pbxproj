@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		770C98712B9F586A00BFADE8 /* BackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C98702B9F586A00BFADE8 /* BackButtonView.swift */; };
 		770C98752BBD888900BFADE8 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C98742BBD888900BFADE8 /* AccountView.swift */; };
 		770C98772BBF01BA00BFADE8 /* SettingsBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C98762BBF01BA00BFADE8 /* SettingsBox.swift */; };
 		770C98792BBF28B800BFADE8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C98782BBF28B800BFADE8 /* User.swift */; };
@@ -17,11 +16,11 @@
 		770C98822BBF358100BFADE8 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 770C98812BBF358100BFADE8 /* FirebaseFirestoreSwift */; };
 		770C98842BBF358100BFADE8 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 770C98832BBF358100BFADE8 /* FirebaseStorage */; };
 		770C98882BBF364C00BFADE8 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C98872BBF364C00BFADE8 /* AuthViewModel.swift */; };
-		770C988A2BCD4D0C00BFADE8 /* RecipesSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C98892BCD4D0C00BFADE8 /* RecipesSearchView.swift */; };
+		770C988A2BCD4D0C00BFADE8 /* RecipesDirectoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C98892BCD4D0C00BFADE8 /* RecipesDirectoryView.swift */; };
 		770C988D2BCD929000BFADE8 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C988C2BCD929000BFADE8 /* Recipe.swift */; };
 		770C98942BCDFC6C00BFADE8 /* RecipeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C98932BCDFC6C00BFADE8 /* RecipeCard.swift */; };
 		770C98962BCE9C1700BFADE8 /* RecipeDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C98952BCE9C1700BFADE8 /* RecipeDetailsView.swift */; };
-		770C98982BCFFF2300BFADE8 /* RecipeStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C98972BCFFF2300BFADE8 /* RecipeStepView.swift */; };
+		770C98982BCFFF2300BFADE8 /* RecipeWalkthroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C98972BCFFF2300BFADE8 /* RecipeWalkthroughView.swift */; };
 		77B39A6A2B83B97200C31A99 /* VoiceBiteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A692B83B97200C31A99 /* VoiceBiteApp.swift */; };
 		77B39A6C2B83B97200C31A99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A6B2B83B97200C31A99 /* ContentView.swift */; };
 		77B39A6E2B83B97300C31A99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77B39A6D2B83B97300C31A99 /* Assets.xcassets */; };
@@ -31,12 +30,11 @@
 		77B39A802B83B97400C31A99 /* VoiceBiteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A7F2B83B97400C31A99 /* VoiceBiteTests.swift */; };
 		77B39A8A2B83B97400C31A99 /* VoiceBiteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A892B83B97400C31A99 /* VoiceBiteUITests.swift */; };
 		77B39A8C2B83B97400C31A99 /* VoiceBiteUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A8B2B83B97400C31A99 /* VoiceBiteUITestsLaunchTests.swift */; };
-		77B39A992B83F2B500C31A99 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A982B83F2B500C31A99 /* HomeView.swift */; };
 		77B39A9B2B840FEC00C31A99 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A9A2B840FEC00C31A99 /* SplashScreenView.swift */; };
-		77B39A9D2B84105600C31A99 /* LoginScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A9C2B84105600C31A99 /* LoginScreenView.swift */; };
-		77B39AA72B84188300C31A99 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39AA62B84188300C31A99 /* InputView.swift */; };
-		77B39AA92B8427DB00C31A99 /* SignupScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39AA82B8427DB00C31A99 /* SignupScreenView.swift */; };
-		77B39AAB2B842C4200C31A99 /* SettingsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39AAA2B842C4200C31A99 /* SettingsScreenView.swift */; };
+		77B39A9D2B84105600C31A99 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A9C2B84105600C31A99 /* LoginView.swift */; };
+		77B39AA72B84188300C31A99 /* InputBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39AA62B84188300C31A99 /* InputBox.swift */; };
+		77B39AA92B8427DB00C31A99 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39AA82B8427DB00C31A99 /* SignUpView.swift */; };
+		77B39AAB2B842C4200C31A99 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39AAA2B842C4200C31A99 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,17 +55,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		770C98702B9F586A00BFADE8 /* BackButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonView.swift; sourceTree = "<group>"; };
 		770C98742BBD888900BFADE8 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		770C98762BBF01BA00BFADE8 /* SettingsBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBox.swift; sourceTree = "<group>"; };
 		770C98782BBF28B800BFADE8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		770C987A2BBF340000BFADE8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		770C98872BBF364C00BFADE8 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
-		770C98892BCD4D0C00BFADE8 /* RecipesSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesSearchView.swift; sourceTree = "<group>"; };
+		770C98892BCD4D0C00BFADE8 /* RecipesDirectoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesDirectoryView.swift; sourceTree = "<group>"; };
 		770C988C2BCD929000BFADE8 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		770C98932BCDFC6C00BFADE8 /* RecipeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCard.swift; sourceTree = "<group>"; };
 		770C98952BCE9C1700BFADE8 /* RecipeDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsView.swift; sourceTree = "<group>"; };
-		770C98972BCFFF2300BFADE8 /* RecipeStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeStepView.swift; sourceTree = "<group>"; };
+		770C98972BCFFF2300BFADE8 /* RecipeWalkthroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeWalkthroughView.swift; sourceTree = "<group>"; };
 		77B39A662B83B97200C31A99 /* VoiceBite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceBite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77B39A692B83B97200C31A99 /* VoiceBiteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceBiteApp.swift; sourceTree = "<group>"; };
 		77B39A6B2B83B97200C31A99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -80,12 +77,11 @@
 		77B39A852B83B97400C31A99 /* VoiceBiteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoiceBiteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		77B39A892B83B97400C31A99 /* VoiceBiteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceBiteUITests.swift; sourceTree = "<group>"; };
 		77B39A8B2B83B97400C31A99 /* VoiceBiteUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceBiteUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		77B39A982B83F2B500C31A99 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		77B39A9A2B840FEC00C31A99 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
-		77B39A9C2B84105600C31A99 /* LoginScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenView.swift; sourceTree = "<group>"; };
-		77B39AA62B84188300C31A99 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
-		77B39AA82B8427DB00C31A99 /* SignupScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupScreenView.swift; sourceTree = "<group>"; };
-		77B39AAA2B842C4200C31A99 /* SettingsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenView.swift; sourceTree = "<group>"; };
+		77B39A9C2B84105600C31A99 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		77B39AA62B84188300C31A99 /* InputBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputBox.swift; sourceTree = "<group>"; };
+		77B39AA82B8427DB00C31A99 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		77B39AAA2B842C4200C31A99 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +116,8 @@
 		770C98852BBF35BF00BFADE8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				77B39AA82B8427DB00C31A99 /* SignupScreenView.swift */,
-				77B39A9C2B84105600C31A99 /* LoginScreenView.swift */,
+				77B39AA82B8427DB00C31A99 /* SignUpView.swift */,
+				77B39A9C2B84105600C31A99 /* LoginView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -146,9 +142,9 @@
 		770C988F2BCDF84E00BFADE8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				770C98892BCD4D0C00BFADE8 /* RecipesSearchView.swift */,
+				770C98892BCD4D0C00BFADE8 /* RecipesDirectoryView.swift */,
 				770C98952BCE9C1700BFADE8 /* RecipeDetailsView.swift */,
-				770C98972BCFFF2300BFADE8 /* RecipeStepView.swift */,
+				770C98972BCFFF2300BFADE8 /* RecipeWalkthroughView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,7 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				770C98742BBD888900BFADE8 /* AccountView.swift */,
-				77B39AAA2B842C4200C31A99 /* SettingsScreenView.swift */,
+				77B39AAA2B842C4200C31A99 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -246,7 +242,6 @@
 				77B39AA52B84156500C31A99 /* Profile */,
 				770C988E2BCDF81400BFADE8 /* Recipes */,
 				77B39AA02B8412AE00C31A99 /* Root */,
-				77B39A982B83F2B500C31A99 /* HomeView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -263,8 +258,7 @@
 		77B39AA22B84141300C31A99 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				77B39AA62B84188300C31A99 /* InputView.swift */,
-				770C98702B9F586A00BFADE8 /* BackButtonView.swift */,
+				77B39AA62B84188300C31A99 /* InputBox.swift */,
 				770C98762BBF01BA00BFADE8 /* SettingsBox.swift */,
 				770C98932BCDFC6C00BFADE8 /* RecipeCard.swift */,
 			);
@@ -437,23 +431,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				770C98752BBD888900BFADE8 /* AccountView.swift in Sources */,
-				77B39AA92B8427DB00C31A99 /* SignupScreenView.swift in Sources */,
-				770C98982BCFFF2300BFADE8 /* RecipeStepView.swift in Sources */,
+				77B39AA92B8427DB00C31A99 /* SignUpView.swift in Sources */,
+				770C98982BCFFF2300BFADE8 /* RecipeWalkthroughView.swift in Sources */,
 				77B39A762B83B97300C31A99 /* VoiceBite.xcdatamodeld in Sources */,
 				77B39A732B83B97300C31A99 /* Persistence.swift in Sources */,
-				77B39A9D2B84105600C31A99 /* LoginScreenView.swift in Sources */,
+				77B39A9D2B84105600C31A99 /* LoginView.swift in Sources */,
 				770C988D2BCD929000BFADE8 /* Recipe.swift in Sources */,
 				770C98882BBF364C00BFADE8 /* AuthViewModel.swift in Sources */,
-				77B39A992B83F2B500C31A99 /* HomeView.swift in Sources */,
 				770C98792BBF28B800BFADE8 /* User.swift in Sources */,
-				77B39AAB2B842C4200C31A99 /* SettingsScreenView.swift in Sources */,
+				77B39AAB2B842C4200C31A99 /* SettingsView.swift in Sources */,
 				77B39A6C2B83B97200C31A99 /* ContentView.swift in Sources */,
 				770C98942BCDFC6C00BFADE8 /* RecipeCard.swift in Sources */,
 				770C98772BBF01BA00BFADE8 /* SettingsBox.swift in Sources */,
-				77B39AA72B84188300C31A99 /* InputView.swift in Sources */,
-				770C98712B9F586A00BFADE8 /* BackButtonView.swift in Sources */,
+				77B39AA72B84188300C31A99 /* InputBox.swift in Sources */,
 				77B39A6A2B83B97200C31A99 /* VoiceBiteApp.swift in Sources */,
-				770C988A2BCD4D0C00BFADE8 /* RecipesSearchView.swift in Sources */,
+				770C988A2BCD4D0C00BFADE8 /* RecipesDirectoryView.swift in Sources */,
 				770C98962BCE9C1700BFADE8 /* RecipeDetailsView.swift in Sources */,
 				77B39A9B2B840FEC00C31A99 /* SplashScreenView.swift in Sources */,
 			);

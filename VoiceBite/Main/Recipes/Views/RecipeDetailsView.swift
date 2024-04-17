@@ -63,47 +63,46 @@ struct RecipeDetailsView: View {
                             
                             LazyVStack (alignment: .leading){
                                 ForEach(Array(recipe.instructions.enumerated()), id: \.element) { index, instruction in
-                                            Text("\(index + 1)) \(instruction)")
-                                                .foregroundColor(Color("TextColour"))
-                                                .padding(10)
-                                        }
+                                    Text("\(index + 1)) \(instruction.description)")
+                                        .foregroundColor(Color("TextColour"))
+                                        .padding(10)
+                                }
                             }
-                            
-                            //Text(recipe.instructions)
-                                //.font(.body)
-                                //.foregroundColor(Color("TextColour"))
                         }
                         .frame(maxHeight: .infinity, alignment: .top)
                         .padding()
-                        
+                    }
+                        VStack{
+                            // Navigates to 1st recipe instruction by adding it to the stack
+                            NavigationLink {
+                                RecipeWalkthroughView(recipe: recipe)
+                            } label: {
+                                Text("START")
+                                    .padding(.vertical, 12.0)
+                                    .padding(.horizontal, 48.0)
+                                    .font(.system(size: 20, weight: .bold))
+                                
+                            }.foregroundColor(Color("SecondaryAccent"))
+                                .background(Color("AccentColor"))
+                                .cornerRadius(15)
+                            //.padding(.top, 50.0)
+                            //.font(.system(size: 14))
+                            
                     }.padding([.top, .horizontal])
-                        .background(.ultraThinMaterial)
                 }
-                
-                // Navigates to 1st recipe instruction by adding it to the stack
-                NavigationLink {
-                    RecipeStepView(recipe: recipe)
-                } label: {
-                    Text("START")
-                        .padding(.vertical, 12.0)
-                        .padding(.horizontal, 48.0)
-                        .font(.system(size: 20, weight: .bold))
-                    
-                }.foregroundColor(Color("SecondaryAccent"))
-                    .background(Color("AccentColor"))
-                    .cornerRadius(15)
-                    .padding(.top, 50.0)
-                                            //.font(.system(size: 14))
-            }.navigationBarItems(trailing: Image(systemName: "xmark.circle").onTapGesture {
+            }
+            .navigationBarItems(trailing: Image(systemName: "xmark.circle").onTapGesture {
                 dismiss()
             }
-                .imageScale(.large)
-                .foregroundColor(Color("TertiaryAccent"))
-            )}
+            .imageScale(.large)
+            .foregroundColor(Color("TertiaryAccent"))
+        )}
     }
 }
 struct RecipeDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeDetailsView(recipe: Recipe(title: "Pesto Pasta", ingredients: ["1", "2"], instructions: ["step 1", "step 2", "step 3", "step 4", "step 5"], imageName: "PestoPasta"))
+        
+        let manager = RecipeManager()
+        RecipeDetailsView(recipe: manager.recipes[0])
     }
 }

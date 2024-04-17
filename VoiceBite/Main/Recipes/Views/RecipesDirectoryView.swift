@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RecipesSearchView: View {
+struct RecipesDirectoryView: View {
     @ObservedObject var recipeManager: RecipeManager
     @State var selectedRecipe: Recipe? = nil
     var body: some View {
@@ -31,7 +31,7 @@ struct RecipesSearchView: View {
             .navigationTitle("Recipes")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: SettingsScreenView()) {
+                    NavigationLink(destination: SettingsView()) {
                         Image(systemName: "gear")
                             .imageScale(.large)
                             .foregroundColor(Color("TertiaryAccent"))
@@ -56,6 +56,6 @@ struct RecipesSearchView: View {
 
 struct RecipesSearchView_Previews: PreviewProvider {
     static var previews: some View {
-        RecipesSearchView(recipeManager: RecipeManager())
+        RecipesDirectoryView(recipeManager: RecipeManager())
     }
 }
