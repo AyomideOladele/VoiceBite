@@ -21,6 +21,7 @@
 		770C988D2BCD929000BFADE8 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C988C2BCD929000BFADE8 /* Recipe.swift */; };
 		770C98942BCDFC6C00BFADE8 /* RecipeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C98932BCDFC6C00BFADE8 /* RecipeCard.swift */; };
 		770C98962BCE9C1700BFADE8 /* RecipeDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C98952BCE9C1700BFADE8 /* RecipeDetailsView.swift */; };
+		770C98982BCFFF2300BFADE8 /* RecipeStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C98972BCFFF2300BFADE8 /* RecipeStepView.swift */; };
 		77B39A6A2B83B97200C31A99 /* VoiceBiteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A692B83B97200C31A99 /* VoiceBiteApp.swift */; };
 		77B39A6C2B83B97200C31A99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A6B2B83B97200C31A99 /* ContentView.swift */; };
 		77B39A6E2B83B97300C31A99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77B39A6D2B83B97300C31A99 /* Assets.xcassets */; };
@@ -66,6 +67,7 @@
 		770C988C2BCD929000BFADE8 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		770C98932BCDFC6C00BFADE8 /* RecipeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCard.swift; sourceTree = "<group>"; };
 		770C98952BCE9C1700BFADE8 /* RecipeDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsView.swift; sourceTree = "<group>"; };
+		770C98972BCFFF2300BFADE8 /* RecipeStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeStepView.swift; sourceTree = "<group>"; };
 		77B39A662B83B97200C31A99 /* VoiceBite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceBite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77B39A692B83B97200C31A99 /* VoiceBiteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceBiteApp.swift; sourceTree = "<group>"; };
 		77B39A6B2B83B97200C31A99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			children = (
 				770C98892BCD4D0C00BFADE8 /* RecipesSearchView.swift */,
 				770C98952BCE9C1700BFADE8 /* RecipeDetailsView.swift */,
+				770C98972BCFFF2300BFADE8 /* RecipeStepView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 			files = (
 				770C98752BBD888900BFADE8 /* AccountView.swift in Sources */,
 				77B39AA92B8427DB00C31A99 /* SignupScreenView.swift in Sources */,
+				770C98982BCFFF2300BFADE8 /* RecipeStepView.swift in Sources */,
 				77B39A762B83B97300C31A99 /* VoiceBite.xcdatamodeld in Sources */,
 				77B39A732B83B97300C31A99 /* Persistence.swift in Sources */,
 				77B39A9D2B84105600C31A99 /* LoginScreenView.swift in Sources */,
