@@ -10,7 +10,6 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var viewModel: AuthViewModel
-    //let recipeManager = RecipeManager()
 
     var body: some View {
         Group {

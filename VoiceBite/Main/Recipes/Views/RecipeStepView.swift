@@ -40,6 +40,6 @@ struct RecipeStepView: View {
 
 struct RecipeStepView_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeStepView(recipe: Recipe(title: "Pesto Pasta", ingredients: ["1", "2"], instructions: ["step 1", "step 2", "step 3", "step 4", "step 5"], imageName: "PestoPasta"))
+        RecipeStepView(recipe: Recipe(title: "Pesto Pasta", ingredients: ["Penne Pasta", "Pesto", "Oil"], instructions: ["Boil a pan of water with salt", "Add pasta to water", "Heat frying pan"], imageName: "PestoPasta"))
     }
 }

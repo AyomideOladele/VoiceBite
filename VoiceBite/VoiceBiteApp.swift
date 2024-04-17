@@ -20,9 +20,12 @@ struct VoiceBiteApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashScreenView()
                 .environmentObject(viewModel)
                 .preferredColorScheme(isDarkMode ? .dark : .light)
+            
+            //ContentView()
+                //.environmentObject(viewModel)
                 //.environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
