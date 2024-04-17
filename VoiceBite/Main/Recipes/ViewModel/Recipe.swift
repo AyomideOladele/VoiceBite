@@ -31,7 +31,7 @@ class RecipeManager: ObservableObject {
     
     @Published var recipes: [Recipe] = [
         
-        Recipe(title: "Pesto Pasta", ingredients: ["1", "2"], instructions: "bla bla blah blah blah WOW", imageName: "PestoPasta"),
+        Recipe(title: "Pesto Pasta", ingredients: ["Penne Pasta", "Pesto", "Oil"], instructions: "1) Boil a pan of water with salt, 2) Add pasta to water, 3) Heat frying pan", imageName: "PestoPasta"),
         
         Recipe(title: "RecipeTitle 2", ingredients: ["1", "2"], instructions: "bla bla blah blah blah WOW", imageName: "AppLogo"),
         

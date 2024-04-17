@@ -26,13 +26,13 @@ struct AccountView: View {
                     List {
                         Section("Details"){
                             HStack{
-                                SettingsBoxView(imageName: "gear", title: "Version", tintColour: .secondary)
+                                SettingsBox(imageName: "gear", title: "Version", tintColour: .secondary)
                                 
                                 Spacer()
                                 
                                 Text("1.0.0")
                             }
-                            SettingsBoxView(imageName: "mail", title: user.email, tintColour: .secondary)
+                            SettingsBox(imageName: "mail", title: user.email, tintColour: .secondary)
                             //SettingsBoxView(imageName: "key", title: User.MOCK_USER.password, tintColour: .secondary)
                             
                         }
@@ -41,7 +41,7 @@ struct AccountView: View {
                             Button {
                                 viewModel.signOut()
                             } label: {
-                                SettingsBoxView(imageName: "arrow.left.circle.fill", title: "Sign Out", tintColour: .red)
+                                SettingsBox(imageName: "arrow.left.circle.fill", title: "Sign Out", tintColour: .red)
                                 }
                             
                             Button {
@@ -49,7 +49,7 @@ struct AccountView: View {
                                     await viewModel.deleteAccount()
                                 }
                             } label: {
-                                SettingsBoxView(imageName: "xmark.circle.fill", title: "Delete Account", tintColour: .red)
+                                SettingsBox(imageName: "xmark.circle.fill", title: "Delete Account", tintColour: .red)
                                 }
                             }
                     }

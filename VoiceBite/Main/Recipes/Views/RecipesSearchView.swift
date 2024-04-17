@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RecipesSearchView: View {
     @ObservedObject var recipeManager: RecipeManager
+    @State var selectedRecipe: Recipe? = nil
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -19,19 +20,14 @@ struct RecipesSearchView: View {
                     
                     ForEach(recipeManager.recipes) { recipe in
                         RecipeCard(recipe: recipe)
-                        
-                        //VStack(alignment: .leading){
-                            //Spacer()
-                                //.frame(width:140, height:130)
-                                //.background(Color.blue)
-                               // .cornerRadius(15)
-
-                            //Text("Recipe name")
-                                //.font(.system(size: 15, weight: .bold))
-                                //.foregroundColor(Color("TextColour")) }
-                        }
-                    }
-                          )} .padding(.horizontal, 15) // spacing at edges of page
+                            .onTapGesture {
+                                selectedRecipe = recipe
+                            }.fullScreenCover(item: $selectedRecipe) {selectedRecipe in
+                                RecipeDetailsView(recipe: selectedRecipe)}
+                }
+                    
+            }
+        )} .padding(.horizontal, 15) // spacing at edges of page
             .navigationTitle("Recipes")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -53,9 +49,9 @@ struct RecipesSearchView: View {
                 }
             }
                    
-             }
         }
     }
+}
 
 
 struct RecipesSearchView_Previews: PreviewProvider {

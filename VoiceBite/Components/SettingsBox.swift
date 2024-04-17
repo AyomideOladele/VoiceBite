@@ -10,7 +10,7 @@
 
 import SwiftUI
 
-struct SettingsBoxView: View {
+struct SettingsBox: View {
     let imageName: String
     let title: String
     let tintColour: Color
@@ -31,6 +31,6 @@ struct SettingsBoxView: View {
 
 struct SettingsBoxView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsBoxView(imageName: "gear", title: "Version", tintColour: Color(.systemRed))
+        SettingsBox(imageName: "gear", title: "Version", tintColour: Color(.systemRed))
     }
 }

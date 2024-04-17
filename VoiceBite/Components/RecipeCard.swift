@@ -52,3 +52,13 @@ struct RecipeCard_Previews: PreviewProvider {
         RecipeCard(recipe: Recipe(title: "RecipeTitle 1", ingredients: ["1", "2"], instructions: "bla bla blah blah blah WOW", imageName: "AppLogo"))
     }
 }
+
+//VStack(alignment: .leading){
+    //Spacer()
+        //.frame(width:140, height:130)
+        //.background(Color.blue)
+       // .cornerRadius(15)
+
+    //Text("Recipe name")
+        //.font(.system(size: 15, weight: .bold))
+        //.foregroundColor(Color("TextColour")) }

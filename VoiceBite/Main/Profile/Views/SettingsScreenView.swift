@@ -25,7 +25,7 @@ struct SettingsScreenView: View {
                 
                 List{
                     HStack{
-                        SettingsBoxView(imageName: "speaker", title: "Volume", tintColour: .secondary)
+                        SettingsBox(imageName: "speaker", title: "Volume", tintColour: .secondary)
                         
                         Spacer()
                         
@@ -37,25 +37,25 @@ struct SettingsScreenView: View {
                     }
                     
                     HStack{
-                        SettingsBoxView(imageName: "mic", title: "Speech Recognition", tintColour: .secondary)
+                        SettingsBox(imageName: "mic", title: "Speech Recognition", tintColour: .secondary)
                         
                         Toggle(isOn: $speechRecognition){}
                     }
                     
                     HStack{
-                        SettingsBoxView(imageName: "mic.circle", title: "Text To Speech", tintColour: .secondary)
+                        SettingsBox(imageName: "mic.circle", title: "Text To Speech", tintColour: .secondary)
                         
                         Toggle(isOn: $textToSpeech){}
                     }
                     
                     HStack{
-                        SettingsBoxView(imageName: "bell", title: "Notifications", tintColour: .secondary)
+                        SettingsBox(imageName: "bell", title: "Notifications", tintColour: .secondary)
                         
                         Toggle(isOn: $notifications){}
                     }
                     
                     HStack{
-                        SettingsBoxView(imageName: "moon", title: "Dark Mode", tintColour: .secondary)
+                        SettingsBox(imageName: "moon", title: "Dark Mode", tintColour: .secondary)
                         
                         Toggle(isOn: $isDarkMode) {}
                     }

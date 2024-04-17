@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		770C98712B9F586A00BFADE8 /* BackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C98702B9F586A00BFADE8 /* BackButtonView.swift */; };
 		770C98752BBD888900BFADE8 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C98742BBD888900BFADE8 /* AccountView.swift */; };
-		770C98772BBF01BA00BFADE8 /* SettingsBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C98762BBF01BA00BFADE8 /* SettingsBoxView.swift */; };
+		770C98772BBF01BA00BFADE8 /* SettingsBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C98762BBF01BA00BFADE8 /* SettingsBox.swift */; };
 		770C98792BBF28B800BFADE8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C98782BBF28B800BFADE8 /* User.swift */; };
 		770C987B2BBF340000BFADE8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 770C987A2BBF340000BFADE8 /* GoogleService-Info.plist */; };
 		770C987E2BBF358100BFADE8 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 770C987D2BBF358100BFADE8 /* FirebaseAuth */; };
@@ -20,6 +20,7 @@
 		770C988A2BCD4D0C00BFADE8 /* RecipesSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C98892BCD4D0C00BFADE8 /* RecipesSearchView.swift */; };
 		770C988D2BCD929000BFADE8 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C988C2BCD929000BFADE8 /* Recipe.swift */; };
 		770C98942BCDFC6C00BFADE8 /* RecipeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C98932BCDFC6C00BFADE8 /* RecipeCard.swift */; };
+		770C98962BCE9C1700BFADE8 /* RecipeDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C98952BCE9C1700BFADE8 /* RecipeDetailsView.swift */; };
 		77B39A6A2B83B97200C31A99 /* VoiceBiteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A692B83B97200C31A99 /* VoiceBiteApp.swift */; };
 		77B39A6C2B83B97200C31A99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A6B2B83B97200C31A99 /* ContentView.swift */; };
 		77B39A6E2B83B97300C31A99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77B39A6D2B83B97300C31A99 /* Assets.xcassets */; };
@@ -57,13 +58,14 @@
 /* Begin PBXFileReference section */
 		770C98702B9F586A00BFADE8 /* BackButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonView.swift; sourceTree = "<group>"; };
 		770C98742BBD888900BFADE8 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
-		770C98762BBF01BA00BFADE8 /* SettingsBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBoxView.swift; sourceTree = "<group>"; };
+		770C98762BBF01BA00BFADE8 /* SettingsBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBox.swift; sourceTree = "<group>"; };
 		770C98782BBF28B800BFADE8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		770C987A2BBF340000BFADE8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		770C98872BBF364C00BFADE8 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		770C98892BCD4D0C00BFADE8 /* RecipesSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesSearchView.swift; sourceTree = "<group>"; };
 		770C988C2BCD929000BFADE8 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		770C98932BCDFC6C00BFADE8 /* RecipeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCard.swift; sourceTree = "<group>"; };
+		770C98952BCE9C1700BFADE8 /* RecipeDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsView.swift; sourceTree = "<group>"; };
 		77B39A662B83B97200C31A99 /* VoiceBite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceBite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77B39A692B83B97200C31A99 /* VoiceBiteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceBiteApp.swift; sourceTree = "<group>"; };
 		77B39A6B2B83B97200C31A99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				770C98892BCD4D0C00BFADE8 /* RecipesSearchView.swift */,
+				770C98952BCE9C1700BFADE8 /* RecipeDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -259,7 +262,7 @@
 			children = (
 				77B39AA62B84188300C31A99 /* InputView.swift */,
 				770C98702B9F586A00BFADE8 /* BackButtonView.swift */,
-				770C98762BBF01BA00BFADE8 /* SettingsBoxView.swift */,
+				770C98762BBF01BA00BFADE8 /* SettingsBox.swift */,
 				770C98932BCDFC6C00BFADE8 /* RecipeCard.swift */,
 			);
 			path = Components;
@@ -442,11 +445,12 @@
 				77B39AAB2B842C4200C31A99 /* SettingsScreenView.swift in Sources */,
 				77B39A6C2B83B97200C31A99 /* ContentView.swift in Sources */,
 				770C98942BCDFC6C00BFADE8 /* RecipeCard.swift in Sources */,
-				770C98772BBF01BA00BFADE8 /* SettingsBoxView.swift in Sources */,
+				770C98772BBF01BA00BFADE8 /* SettingsBox.swift in Sources */,
 				77B39AA72B84188300C31A99 /* InputView.swift in Sources */,
 				770C98712B9F586A00BFADE8 /* BackButtonView.swift in Sources */,
 				77B39A6A2B83B97200C31A99 /* VoiceBiteApp.swift in Sources */,
 				770C988A2BCD4D0C00BFADE8 /* RecipesSearchView.swift in Sources */,
+				770C98962BCE9C1700BFADE8 /* RecipeDetailsView.swift in Sources */,
 				77B39A9B2B840FEC00C31A99 /* SplashScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
