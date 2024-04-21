@@ -25,7 +25,7 @@ struct SettingsView: View {
                 
                 List{
                     HStack{
-                        SettingsBox(imageName: "speaker", title: "Volume", tintColour: .secondary)
+                        SettingsBox(imageName: "speaker", title: "Volume", iconColour: .secondary)
                         
                         Spacer()
                         
@@ -37,39 +37,28 @@ struct SettingsView: View {
                     }
                     
                     HStack{
-                        SettingsBox(imageName: "mic", title: "Speech Recognition", tintColour: .secondary)
+                        SettingsBox(imageName: "mic", title: "Speech Recognition", iconColour: .secondary)
                         
                         Toggle(isOn: $speechRecognition){}
                     }
                     
                     HStack{
-                        SettingsBox(imageName: "mic.circle", title: "Text To Speech", tintColour: .secondary)
+                        SettingsBox(imageName: "mic.circle", title: "Text To Speech", iconColour: .secondary)
                         
                         Toggle(isOn: $textToSpeech){}
                     }
                     
                     HStack{
-                        SettingsBox(imageName: "bell", title: "Notifications", tintColour: .secondary)
+                        SettingsBox(imageName: "bell", title: "Notifications", iconColour: .secondary)
                         
                         Toggle(isOn: $notifications){}
                     }
                     
                     HStack{
-                        SettingsBox(imageName: "moon", title: "Dark Mode", tintColour: .secondary)
+                        SettingsBox(imageName: "moon", title: "Dark Mode", iconColour: .secondary)
                         
                         Toggle(isOn: $isDarkMode) {}
                     }
-                    
-                    // Back Button
-                    //Button(action: { }) {
-                    //  Text("BACK")
-                    //      .padding(.vertical, 12.0)
-                    //      .padding(.horizontal, 20.0)
-                    //     .font(.system(size: 20, weight: .bold))
-                    // }
-                    // .foregroundColor(Color("SecondaryAccent"))
-                    // .background(Color("TertiaryAccent"))
-                    // .cornerRadius(15)
                 }
             }
         }

@@ -2,31 +2,29 @@
 //  VoiceBiteApp.swift
 //  VoiceBite
 //
-//  Created by Ayomide Oladele on 19/02/2024.
-//
+// Serves as the entry point for the VoiceBite application at startup.
+// This file sets up the main application structure, initializes Firebase, and sets up the first view of the application.
+
 
 import SwiftUI
 import Firebase
 
 @main
 struct VoiceBiteApp: App {
-    @StateObject var viewModel = AuthViewModel()
-    @AppStorage("isDarkMode") private var isDarkMode = false
-    //let persistenceController = PersistenceController.shared
+    
+    @StateObject var viewModel = AuthViewModel() // Authentication model for VoiceBite, used across the appliation
+    @AppStorage("isDarkMode") private var isDarkMode = false // Stores user preferences for app theme (Dark/Light mode)
     
     init(){
         FirebaseApp.configure()
     }
 
+    // Configures the main scene of the app
     var body: some Scene {
         WindowGroup {
             SplashScreenView()
-                .environmentObject(viewModel)
-                .preferredColorScheme(isDarkMode ? .dark : .light)
-            
-            //ContentView()
-                //.environmentObject(viewModel)
-                //.environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(viewModel) // Passes authentication model to first view
+                .preferredColorScheme(isDarkMode ? .dark : .light) // Applies users stored theme preferences at startup
         }
     }
 }

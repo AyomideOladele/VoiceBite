@@ -26,7 +26,7 @@ struct SplashScreenView: View {
                     
                     // App Title
                     Text("VoiceBite")
-                        .foregroundColor(Color("TextColour").opacity(0.80))
+                        .foregroundColor(Color("TextColor").opacity(0.80))
                         .font(.system(size: 40))
                         .bold()
                 }

@@ -34,7 +34,7 @@ struct RecipesDirectoryView: View {
                     NavigationLink(destination: SettingsView()) {
                         Image(systemName: "gear")
                             .imageScale(.large)
-                            .foregroundColor(Color("TertiaryAccent"))
+                            .foregroundColor(Color("IconButtonColor"))
                             .accessibilityLabel("App Settings")
                     }
                 }
@@ -43,7 +43,7 @@ struct RecipesDirectoryView: View {
                     NavigationLink(destination: AccountView()) {
                         Image(systemName: "person.circle")
                             .imageScale(.large)
-                            .foregroundColor(Color("TertiaryAccent"))
+                            .foregroundColor(Color("IconButtonColor"))
                             .accessibilityLabel("Account")
                     }
                 }

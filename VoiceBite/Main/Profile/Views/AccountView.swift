@@ -21,18 +21,18 @@ struct AccountView: View {
                         .padding(.vertical, 5.0)
                         .font(.title)
                     Text("Welcome back, " + user.fullname)
-                        .foregroundColor(Color("QuaternaryAccent"))
+                        .foregroundColor(Color("TextColor").opacity(0.8))
                     
                     List {
                         Section("Details"){
                             HStack{
-                                SettingsBox(imageName: "gear", title: "Version", tintColour: .secondary)
+                                SettingsBox(imageName: "gear", title: "Version", iconColour: .secondary)
                                 
                                 Spacer()
                                 
                                 Text("1.0.0")
                             }
-                            SettingsBox(imageName: "mail", title: user.email, tintColour: .secondary)
+                            SettingsBox(imageName: "mail", title: user.email, iconColour: .secondary)
                             //SettingsBoxView(imageName: "key", title: User.MOCK_USER.password, tintColour: .secondary)
                             
                         }
@@ -41,7 +41,7 @@ struct AccountView: View {
                             Button {
                                 viewModel.signOut()
                             } label: {
-                                SettingsBox(imageName: "arrow.left.circle.fill", title: "Sign Out", tintColour: .red)
+                                SettingsBox(imageName: "arrow.left.circle.fill", title: "Sign Out", iconColour: .red)
                                 }
                             
                             Button {
@@ -49,7 +49,7 @@ struct AccountView: View {
                                     await viewModel.deleteAccount()
                                 }
                             } label: {
-                                SettingsBox(imageName: "xmark.circle.fill", title: "Delete Account", tintColour: .red)
+                                SettingsBox(imageName: "xmark.circle.fill", title: "Delete Account", iconColour: .red)
                                 }
                             }
                     }
@@ -61,6 +61,6 @@ struct AccountView: View {
 
 struct AccountView_Previews: PreviewProvider {
     static var previews: some View {
-        AccountView() //.environmentObject(AuthViewModel())
+        AccountView().environmentObject(AuthViewModel())
     }
 }

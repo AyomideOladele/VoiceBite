@@ -13,24 +13,24 @@ import SwiftUI
 struct SettingsBox: View {
     let imageName: String
     let title: String
-    let tintColour: Color
+    let iconColour: Color
     
     var body: some View {
         HStack(spacing: 12) {
             Image(systemName: imageName)
                 .imageScale(.small)
                 .font(.title)
-                .foregroundColor(tintColour)
+                .foregroundColor(iconColour)
             
             Text(title)
                 .font(.subheadline)
-                .foregroundColor(Color("TextColour"))
+                .foregroundColor(Color("TextColor"))
         }
     }
 }
 
 struct SettingsBoxView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsBox(imageName: "gear", title: "Version", tintColour: Color(.systemRed))
+        SettingsBox(imageName: "gear", title: "Version", iconColour: Color(.systemRed))
     }
 }

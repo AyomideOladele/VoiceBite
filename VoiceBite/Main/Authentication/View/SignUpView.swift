@@ -75,7 +75,7 @@ struct SignUpView: View {
                         .padding(.horizontal, 48.0)
                         .font(.system(size: 20, weight: .bold))
                 }
-                .foregroundColor(Color("SecondaryAccent"))
+                .foregroundColor(Color("ButtonTextColor"))
                 .background(Color("AccentColor"))
                 .cornerRadius(15)
                 .padding(.top, 50.0)

@@ -20,7 +20,7 @@ struct RecipeCard: View {
             
             Text(recipe.title)
                 .font(.system(size: 15, weight: .bold))
-                .foregroundColor(Color("TextColour"))
+                .foregroundColor(Color("TextColor"))
         }.frame(width:140, height:130)
         
         //VStack {
@@ -63,4 +63,4 @@ struct RecipeCard_Previews: PreviewProvider {
 
     //Text("Recipe name")
         //.font(.system(size: 15, weight: .bold))
-        //.foregroundColor(Color("TextColour")) }
+        //.foregroundColor(Color("TextColor")) }

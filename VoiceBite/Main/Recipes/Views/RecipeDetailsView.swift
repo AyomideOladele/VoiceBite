@@ -43,7 +43,7 @@ struct RecipeDetailsView: View {
                                         .enumerated()), id: \.element) {
                                             index, ingredient in
                                             Text(ingredient)
-                                                .foregroundColor(Color("TextColour"))
+                                                .foregroundColor(Color("TextColor"))
                                                 .padding(10)
                                                 .background(.ultraThinMaterial)
                                                 .cornerRadius(6)
@@ -51,7 +51,7 @@ struct RecipeDetailsView: View {
                                 }
                             }.frame(height: 100)
                                 .font(.body)
-                                .foregroundColor(Color("TextColour"))
+                                .foregroundColor(Color("TextColor"))
                         }
                         .padding([.top, .horizontal])
                         
@@ -64,7 +64,7 @@ struct RecipeDetailsView: View {
                             LazyVStack (alignment: .leading){
                                 ForEach(Array(recipe.instructions.enumerated()), id: \.element) { index, instruction in
                                     Text("\(index + 1)) \(instruction.description)")
-                                        .foregroundColor(Color("TextColour"))
+                                        .foregroundColor(Color("TextColor"))
                                         .padding(10)
                                 }
                             }
@@ -82,7 +82,7 @@ struct RecipeDetailsView: View {
                                     .padding(.horizontal, 48.0)
                                     .font(.system(size: 20, weight: .bold))
                                 
-                            }.foregroundColor(Color("SecondaryAccent"))
+                            }.foregroundColor(Color("ButtonTextColor"))
                                 .background(Color("AccentColor"))
                                 .cornerRadius(15)
                             //.padding(.top, 50.0)
@@ -95,7 +95,7 @@ struct RecipeDetailsView: View {
                 dismiss()
             }
             .imageScale(.large)
-            .foregroundColor(Color("TertiaryAccent"))
+            .foregroundColor(Color("IconButtonColor"))
         )}
     }
 }
