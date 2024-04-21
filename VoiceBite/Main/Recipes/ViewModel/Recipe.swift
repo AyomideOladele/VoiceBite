@@ -33,7 +33,56 @@ class RecipeManager: ObservableObject {
             Recipe.Instruction(description: "Add pasta to water", imageName: "AppLogo"),
             Recipe.Instruction(description: "Heat frying pan", imageName: "AppLogo")
         ]),
+        
         Recipe(title: "Recipe2", imageName: "AppLogo", ingredients: ["Ingredient1", "Ingredient2", "Ingredient3"], instructions: [
+            Recipe.Instruction(description: "Step1", imageName: "AppLogo"),
+            Recipe.Instruction(description: "Step2", imageName: "AppLogo"),
+            Recipe.Instruction(description: "Step3", imageName: "AppLogo")
+        ]),
+        
+        Recipe(title: "Recipe3", imageName: "AppLogo", ingredients: ["Ingredient1", "Ingredient2", "Ingredient3"], instructions: [
+            Recipe.Instruction(description: "Step1", imageName: "AppLogo"),
+            Recipe.Instruction(description: "Step2", imageName: "AppLogo"),
+            Recipe.Instruction(description: "Step3", imageName: "AppLogo")
+        ]),
+        
+        Recipe(title: "Recip4", imageName: "AppLogo", ingredients: ["Ingredient1", "Ingredient2", "Ingredient3"], instructions: [
+            Recipe.Instruction(description: "Step1", imageName: "AppLogo"),
+            Recipe.Instruction(description: "Step2", imageName: "AppLogo"),
+            Recipe.Instruction(description: "Step3", imageName: "AppLogo")
+        ]),
+        
+        Recipe(title: "Recipe5", imageName: "AppLogo", ingredients: ["Ingredient1", "Ingredient2", "Ingredient3"], instructions: [
+            Recipe.Instruction(description: "Step1", imageName: "AppLogo"),
+            Recipe.Instruction(description: "Step2", imageName: "AppLogo"),
+            Recipe.Instruction(description: "Step3", imageName: "AppLogo")
+        ]),
+        
+        Recipe(title: "Recipe6", imageName: "AppLogo", ingredients: ["Ingredient1", "Ingredient2", "Ingredient3"], instructions: [
+            Recipe.Instruction(description: "Step1", imageName: "AppLogo"),
+            Recipe.Instruction(description: "Step2", imageName: "AppLogo"),
+            Recipe.Instruction(description: "Step3", imageName: "AppLogo")
+        ]),
+        
+        Recipe(title: "Recipe7", imageName: "AppLogo", ingredients: ["Ingredient1", "Ingredient2", "Ingredient3"], instructions: [
+            Recipe.Instruction(description: "Step1", imageName: "AppLogo"),
+            Recipe.Instruction(description: "Step2", imageName: "AppLogo"),
+            Recipe.Instruction(description: "Step3", imageName: "AppLogo")
+        ]),
+        
+        Recipe(title: "Recipe8", imageName: "AppLogo", ingredients: ["Ingredient1", "Ingredient2", "Ingredient3"], instructions: [
+            Recipe.Instruction(description: "Step1", imageName: "AppLogo"),
+            Recipe.Instruction(description: "Step2", imageName: "AppLogo"),
+            Recipe.Instruction(description: "Step3", imageName: "AppLogo")
+        ]),
+        
+        Recipe(title: "Recipe9", imageName: "AppLogo", ingredients: ["Ingredient1", "Ingredient2", "Ingredient3"], instructions: [
+            Recipe.Instruction(description: "Step1", imageName: "AppLogo"),
+            Recipe.Instruction(description: "Step2", imageName: "AppLogo"),
+            Recipe.Instruction(description: "Step3", imageName: "AppLogo")
+        ]),
+        
+        Recipe(title: "Recipe10", imageName: "AppLogo", ingredients: ["Ingredient1", "Ingredient2", "Ingredient3"], instructions: [
             Recipe.Instruction(description: "Step1", imageName: "AppLogo"),
             Recipe.Instruction(description: "Step2", imageName: "AppLogo"),
             Recipe.Instruction(description: "Step3", imageName: "AppLogo")
