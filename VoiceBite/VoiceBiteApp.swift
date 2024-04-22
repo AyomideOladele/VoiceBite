@@ -19,7 +19,7 @@ struct VoiceBiteApp: App {
         FirebaseApp.configure()
     }
 
-    // Configures the main scene of the app
+    // Configures and displays the first view of the app
     var body: some Scene {
         WindowGroup {
             SplashScreenView()

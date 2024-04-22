@@ -25,7 +25,7 @@ struct SettingsView: View {
                 
                 List{
                     HStack{
-                        SettingsBox(imageName: "speaker", title: "Volume", iconColour: .secondary)
+                        SettingsBox(imageName: "speaker", label: "Volume", iconColour: .secondary)
                         
                         Spacer()
                         
@@ -37,25 +37,25 @@ struct SettingsView: View {
                     }
                     
                     HStack{
-                        SettingsBox(imageName: "mic", title: "Speech Recognition", iconColour: .secondary)
+                        SettingsBox(imageName: "mic", label: "Speech Recognition", iconColour: .secondary)
                         
                         Toggle(isOn: $speechRecognition){}
                     }
                     
                     HStack{
-                        SettingsBox(imageName: "mic.circle", title: "Text To Speech", iconColour: .secondary)
+                        SettingsBox(imageName: "mic.circle", label: "Text To Speech", iconColour: .secondary)
                         
                         Toggle(isOn: $textToSpeech){}
                     }
                     
                     HStack{
-                        SettingsBox(imageName: "bell", title: "Notifications", iconColour: .secondary)
+                        SettingsBox(imageName: "bell", label: "Notifications", iconColour: .secondary)
                         
                         Toggle(isOn: $notifications){}
                     }
                     
                     HStack{
-                        SettingsBox(imageName: "moon", title: "Dark Mode", iconColour: .secondary)
+                        SettingsBox(imageName: "moon", label: "Dark Mode", iconColour: .secondary)
                         
                         Toggle(isOn: $isDarkMode) {}
                     }

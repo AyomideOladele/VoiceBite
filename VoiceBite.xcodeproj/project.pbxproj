@@ -203,7 +203,6 @@
 				77B39A692B83B97200C31A99 /* VoiceBiteApp.swift */,
 				77B39AA22B84141300C31A99 /* Components */,
 				77B39A9F2B8412A000C31A99 /* Main */,
-				77B39AA32B84153200C31A99 /* Models */,
 				77B39A6D2B83B97300C31A99 /* Assets.xcassets */,
 				770C987A2BBF340000BFADE8 /* GoogleService-Info.plist */,
 				77B39A722B83B97300C31A99 /* Persistence.swift */,
@@ -266,13 +265,6 @@
 				770C98932BCDFC6C00BFADE8 /* RecipeCard.swift */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		77B39AA32B84153200C31A99 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		77B39AA42B84155C00C31A99 /* Authentication */ = {

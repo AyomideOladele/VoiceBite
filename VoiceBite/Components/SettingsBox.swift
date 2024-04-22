@@ -2,28 +2,25 @@
 //  SettingsBoxView.swift
 //  VoiceBite
 //
-// Template Icon made to be reused for setting icons/buttons
-// Made using AppStuff Guide
-//
-//  Created by Ayomide Oladele on 04/04/2024.
+// A view component for a reusable settings box, with a label and icon
 //
 
 import SwiftUI
 
 struct SettingsBox: View {
     let imageName: String
-    let title: String
+    let label: String
     let iconColour: Color
     
+    // Creates view of icon and label, formatted horizontally
     var body: some View {
         HStack(spacing: 12) {
             Image(systemName: imageName)
-                .imageScale(.small)
-                .font(.title)
+                .font(.system(size: 20))
                 .foregroundColor(iconColour)
             
-            Text(title)
-                .font(.subheadline)
+            Text(label)
+                .font(.system(size: 16))
                 .foregroundColor(Color("TextColor"))
         }
     }
@@ -31,6 +28,6 @@ struct SettingsBox: View {
 
 struct SettingsBoxView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsBox(imageName: "gear", title: "Version", iconColour: Color(.systemRed))
+        SettingsBox(imageName: "gear", label: "label", iconColour: Color("IconButtonColor"))
     }
 }
