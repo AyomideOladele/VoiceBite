@@ -2,16 +2,20 @@
 //  RecipeWalkthroughView.swift
 //  VoiceBite
 //
-//  Created by Ayomide Oladele on 17/04/2024.
-//
+// A view displaying a walkthrough for recipes.
+
 import SwiftUI
+import AVFoundation
 import Combine
 
 struct RecipeWalkthroughView: View {
+    
     var recipe: Recipe
     @Environment(\.dismiss) var dismiss
     @State private var currentTab = 0
     @StateObject private var speechRecognizer = SpeechRecognizer()
+    let synthesizer = AVSpeechSynthesizer()
+    @AppStorage("chosenLanguage") private var chosenLanguage: String = "en-US"
     
     var body: some View {
         VStack {
@@ -51,18 +55,24 @@ struct RecipeWalkthroughView: View {
         .onDisappear {
             speechRecognizer.stopListening()
         }
-        .onChange(of: speechRecognizer.command) { newValue in
+        .onChange(of: currentTab) { _ in
+            speakCurrentInstruction()
             print("DEBUG: Current tab before command is handled \(currentTab)")
-            guard let command = newValue?.lowercased(), !command.isEmpty else { return }
-                handleCommand(command)
-            //handleCommand(newValue)
         }
+        .onChange(of: speechRecognizer.command) { newCommand in
+                    handleCommand(newCommand)
+                }
     }
+    
+    private func speakCurrentInstruction() {
+            let instruction = recipe.instructions[currentTab].description
+            let utterance = AVSpeechUtterance(string: instruction)
+            utterance.voice = AVSpeechSynthesisVoice(language: chosenLanguage)
+            synthesizer.speak(utterance)
+        }
 
     private func handleCommand(_ command: String?) {
-        //guard let command = command?.lowercased() else { return }
-
-        //print("Handling command: \(String(describing: command))")
+        guard let command = command?.lowercased(), !command.isEmpty else { return }
         DispatchQueue.main.async {
             switch command {
             case "next":
@@ -80,7 +90,6 @@ struct RecipeWalkthroughView: View {
             }
         }
     }
-
 }
 
 struct RecipeStepView_Previews: PreviewProvider {

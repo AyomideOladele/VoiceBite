@@ -28,6 +28,7 @@ struct RecipeCard: View {
                         .frame(width: 120)
                         .background(Color.black.opacity(0.5))
                         .offset(y: 20), alignment: .topLeading
+                        
                 )
         }
     }

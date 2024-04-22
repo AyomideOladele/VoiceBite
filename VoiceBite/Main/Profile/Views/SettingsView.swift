@@ -1,8 +1,8 @@
 //
-//  SettingsScreenView.swift
+//  SettingsView.swift
 //  VoiceBite
 //
-//  Created by Ayomide Oladele on 20/02/2024.
+//
 //
 
 import SwiftUI

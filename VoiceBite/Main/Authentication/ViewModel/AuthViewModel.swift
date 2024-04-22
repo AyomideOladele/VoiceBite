@@ -2,14 +2,16 @@
 //  AuthViewModel.swift
 //  VoiceBite
 //
-//  Created by Ayomide Oladele on 04/04/2024.
-//
 // Manages the authentication state of the user
+//
+// TODO: Add error message for user signout and delete on account view
+// TODO: Create resetPassword()
 
 import Foundation
 import Firebase
 import FirebaseFirestoreSwift
 
+// Defines protocol for validating authentication forms
 protocol AuthenticationFormProtocol {
     var formIsValid: Bool { get }
 }
@@ -18,24 +20,26 @@ protocol AuthenticationFormProtocol {
 class AuthViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User? //Stores whether a user is logged in
     @Published var currentUser: User? // Stores current users details
+    @Published var errorMessage: String?
     
     // Initialises the view model by checking if a user is currently logged in
     init(){
         self.userSession = Auth.auth().currentUser
-        
         Task {
             await fetchUser() // Fetches user data if they are logged in
         }
     }
     
-    // Attempts to sign user in using user input
+    // Attempts to sign user in using user input and set current session
     func signIn(withEmail email: String, password: String) async throws {
         do {
             let result = try await Auth.auth().signIn(withEmail: email, password: password)
             self.userSession = result.user
             await fetchUser()
+            errorMessage = nil // No error occured, so error message is empty
         } catch {
             print("DEBUG: Failed to log in with error \(error.localizedDescription)")
+            errorMessage = error.localizedDescription
         }
     }
     
@@ -45,18 +49,20 @@ class AuthViewModel: ObservableObject {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
             self.userSession = result.user
             let user = User(id: result.user.uid, fullname: fullname, email: email)
-            let encodedUser = try Firestore.Encoder().encode(user)
+            let encodedUser = try Firestore.Encoder().encode(user) // Converts user details into form firebase can handle
             try await Firestore.firestore().collection("users").document(user.id).setData(encodedUser)
             await fetchUser()
+            errorMessage = nil
         } catch {
             print("DEBUG: Failed to create user with error \(error.localizedDescription)")
+            errorMessage = error.localizedDescription
         }
     }
     
     // Signs out the current user and clears session information.
     func signOut() {
         do {
-            try Auth.auth().signOut() // signs user out in the backend
+            try Auth.auth().signOut() // Signs user out in the backend
             self.userSession = nil
             self.currentUser = nil
         } catch {

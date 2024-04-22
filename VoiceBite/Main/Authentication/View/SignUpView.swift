@@ -1,119 +1,136 @@
 //
-//  SignupScreenView.swift
+//  SignUpView.swift
 //  VoiceBite
 //
-//  Created by Ayomide Oladele on 20/02/2024.
+// A view for user registration
 //
+// TODO: Add screen shake for when login details are incorrect
 
 import SwiftUI
 
 struct SignUpView: View {
+    
     @State private var fullname = ""
     @State private var email = ""
     @State private var password = ""
     @State private var confirmPassword = ""
-    @Environment(\.dismiss) var dismiss
     @EnvironmentObject var viewModel: AuthViewModel
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
-            VStack{
+        VStack{
+            
+            Image("AppLogo")
+                .resizable()
+                .frame(width: 120, height: 120)
+                .padding(.top, 70)
+                .padding(.bottom, 20)
+                .accessibilityLabel("App Logo")
+            
+            // Creates 4 vertical form fields
+            VStack(spacing: 15){
                 
-                // App Logo
-                Image("AppLogo")
-                    .resizable()
-                    .frame(width : 120, height: 120)
+                InputBox(text: $fullname, placeholder: "Full Name")
+                    .accessibilityLabel("Full Name")
+                InputBox(text: $email, placeholder: "Email")
+                    .accessibilityLabel("Email")
+                InputBox(text: $password, placeholder: "Password", isSecureField: true)
+                    .accessibilityLabel("Password")
                 
-                // Form Fields
-                VStack(spacing: 24){
+                // Displays checkmark overlay to user whether passwords match or not
+                ZStack(alignment: .trailing) {
+                    InputBox(text: $confirmPassword, placeholder: "Re-enter Password", isSecureField: true)
+                        .accessibilityLabel("Confirm Password")
                     
-                    InputBox(text: $fullname,
-                              placeholder: "Full Name")
-                    .autocapitalization(.none)
-                    
-                    InputBox(text: $email,
-                              placeholder: "Email")
-                    .autocapitalization(.none)
-                    
-                    InputBox(text: $password,
-                              placeholder: "Password",
-                              isSecureField: true)
-                    
-                    ZStack(alignment: .trailing) {
-                        InputBox(text: $confirmPassword,
-                                 placeholder: "Re-enter Password",
-                                 isSecureField: true)
-                        
-                        // Displays checkmark to indicate to user whether passwords match or not
-                        if !password.isEmpty && !confirmPassword.isEmpty{
-                            if password == confirmPassword {
-                                Image(systemName: "checkmark.circle.fill")
-                                    .imageScale(.large)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(Color(.systemGreen))
-                            } else {
-                                Image(systemName: "xmark.circle.fill")
-                                    .imageScale(.large)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(Color(.systemRed))
-                            }
+                    if !password.isEmpty && !confirmPassword.isEmpty{
+                        if password == confirmPassword {
+                            Image(systemName: "checkmark.circle")
+                                .imageScale(.large)
+                                .fontWeight(.bold)
+                                .foregroundColor(.green)
+                                .opacity(0.8)
+                                .offset(x: -8)
+                        } else {
+                            Image(systemName: "xmark.circle")
+                                .imageScale(.large)
+                                .fontWeight(.bold)
+                                .foregroundColor(.red)
+                                .opacity(0.8)
+                                .offset(x: -8)
                         }
                     }
-                    
                 }
-                .padding(.horizontal, 25)
-                .padding(.top, 30)
                 
+                Text("Password must be at least 8 characters, contain at least 1 uppercase letter and 1 numeric character")
+                .font(.caption2)
+                .italic()
+                .foregroundColor(Color("TextColor"))
+                .fixedSize(horizontal: false, vertical: true) // Wraps text around
                 
-                // Signup Button
-                Button {
-                    Task {
-                        try await viewModel.createUser(withEmail: email, password:password, fullname:fullname)
-                    }
-                } label: {
-                    Text("SIGNUP")
-                        .padding(.vertical, 12.0)
-                        .padding(.horizontal, 48.0)
-                        .font(.system(size: 20, weight: .bold))
+            }
+            .padding(.horizontal, 25)
+            .padding(.vertical, 25)
+            
+            
+            // Signup Button
+            Button {
+                Task {
+                    try await viewModel.createUser(withEmail: email, password:password, fullname:fullname) // if successful, dismisses sign up view and displays recipe directory on users new account
                 }
-                .foregroundColor(Color("ButtonTextColor"))
-                .background(Color("AccentColor"))
-                .cornerRadius(15)
-                .padding(.top, 50.0)
-                
-                //Fade button if data entry from user is invalid
-                .disabled(!formIsValid)
-                .opacity(formIsValid ? 1.0 : 0.5)
-                
-                // Spaces signup button away from navigation link
-                Spacer()
-                    .frame(height: 80.0)
-                
-                // Navigates to login page by pushing view off stack
-                Button {
-                    dismiss()
+            } label: {
+                Text("SIGNUP")
+                    .padding(.vertical, 12.0)
+                    .padding(.horizontal, 48.0)
+                    .font(.system(size: 20, weight: .bold))
+            }
+            .foregroundColor(Color("ButtonTextColor"))
+            .background(Color("AccentColor"))
+            .cornerRadius(15)
+            .padding(.top, 40.0)
+            .accessibilityLabel("Signup button")
+            // Displays alert if error occurs during authentication (i.e. email address already in use)
+            // Gets error message if not nil in viewModel, sets it to nil after alert has been displayed
+            .alert("Error", isPresented: Binding<Bool>(
+                get: { viewModel.errorMessage != nil },
+                set: { _ in viewModel.errorMessage = nil })) {
+                    Button("OK", role: .cancel) { }
+                } message: {
+                    Text(viewModel.errorMessage ?? "") // Displays error message and prevents app from crashing if errorMessage = nil by displaying empty string
+                }
+            
+            //Fade button if data entry from user is invalid
+            .disabled(!formIsValid)
+            .opacity(formIsValid ? 1.0 : 0.7)
+            
+            // Spaces signup button away from navigation link
+            Spacer(minLength: 20.0)
+            
+            // Navigates to login page by pushing view off stack
+            Button {
+                dismiss()
                 } label: {
                     HStack(spacing: 3) {
                         Text("Already have an account?")
                         Text("Log in")
                             .fontWeight(.bold)
-                    }
-                    .font(.system(size: 14))
-                }
+                    }.font(.body)
+                }.frame(maxHeight: .infinity)
+                 .accessibilityLabel("Navigate to login screen")
             }
-            
         }
-    }
+}
 
+// If user data entry is valid, returns true
 extension SignUpView: AuthenticationFormProtocol {
     var formIsValid: Bool {
         
-        let emailHasBasicFormat = email.contains("@") && email.contains(".")
+        let emailFormatValid = email.contains("@") && email.contains(".")
         let passwordHasNumber = password.rangeOfCharacter(from: .decimalDigits) != nil
         let passwordHasCapitalLetter = password.rangeOfCharacter(from: .uppercaseLetters) != nil
         let passwordLengthValid = password.count > 8
         
         return !email.isEmpty
-        && emailHasBasicFormat
+        && emailFormatValid
         && !password.isEmpty
         && passwordLengthValid
         && passwordHasCapitalLetter
@@ -123,10 +140,9 @@ extension SignUpView: AuthenticationFormProtocol {
         
     }
 }
-    
-    struct SignupScreenView_Previews: PreviewProvider {
-        static var previews: some View {
-            SignUpView().environmentObject(AuthViewModel())
-        }
-    }
 
+struct SignUpView_Previews: PreviewProvider {
+    static var previews: some View {
+        SignUpView().environmentObject(AuthViewModel())
+    }
+}

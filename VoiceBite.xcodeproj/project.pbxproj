@@ -602,6 +602,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"VoiceBite/Preview Content\"";
+				DEVELOPMENT_TEAM = 59A54ZY2BB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded for voice commands and transcript.. Audio recordings are discareded once command s fufilled, and transcription is recorded.";
@@ -633,6 +634,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"VoiceBite/Preview Content\"";
+				DEVELOPMENT_TEAM = 59A54ZY2BB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded for voice commands and transcript.. Audio recordings are discareded once command s fufilled, and transcription is recorded.";

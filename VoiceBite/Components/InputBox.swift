@@ -30,6 +30,8 @@ struct InputBox: View {
          .background(Color("TextBackgroundColor").opacity(0.2))
          .foregroundColor(Color("TextColor"))
          .cornerRadius(7)
+         .autocapitalization(.none)
+         .disableAutocorrection(true)
     }
     
     struct InputBox_Previews: PreviewProvider {

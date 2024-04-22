@@ -14,6 +14,7 @@ struct VoiceBiteApp: App {
     
     @StateObject var viewModel = AuthViewModel() // Authentication model for VoiceBite, used across the appliation
     @AppStorage("isDarkMode") private var isDarkMode = false // Stores user preferences for app theme (Dark/Light mode)
+    @AppStorage("chosenLanguage") private var chosenLanguage: String = "en-US"  // Default language is English
     
     init(){
         FirebaseApp.configure()
@@ -25,6 +26,7 @@ struct VoiceBiteApp: App {
             SplashScreenView()
                 .environmentObject(viewModel) // Passes authentication model to first view
                 .preferredColorScheme(isDarkMode ? .dark : .light) // Applies users stored theme preferences at startup
+                .environment(\.locale, .init(identifier: chosenLanguage))
         }
     }
 }
