@@ -11,11 +11,12 @@ import SwiftUI
 struct AccountView: View {
     
     @EnvironmentObject var viewModel: AuthViewModel
+    @State var showingAlert : Bool = false
     
     var body: some View {
         
         if let user = viewModel.currentUser {
-            NavigationStack{
+            NavigationView{
                 VStack{
                     
                     Text("MY ACCOUNT")
@@ -45,13 +46,14 @@ struct AccountView: View {
                         
                         Section("Account"){
                             
+                            /*
                             // Reset password button
                             Button {
                                 //TODO: viewModel.resetPassword()
                             } label: {
                                 SettingsBox(imageName: "arrow.clockwise.circle.fill", label: "Reset Password", iconColour: .red)
                             }
-                            .accessibilityLabel("Reset Password")
+                            .accessibilityLabel("Reset Password")*/
                             
                             // Sign Out Button
                             Button {
@@ -63,13 +65,25 @@ struct AccountView: View {
                             
                             // Delete Account Button
                             Button {
-                                Task {
-                                    await viewModel.deleteAccount()
-                                }
+                                showingAlert = true
                             } label: {
                                 SettingsBox(imageName: "xmark.circle.fill", label: "Delete Account", iconColour: .red)
                             }
                             .accessibilityLabel("Delete Account")
+                            // Displays alert if error occurs during authentication (i.e. email address already in use)
+                            // Gets error message if not nil in viewModel, sets it to nil after alert has been displayed
+                            .alert(isPresented: $showingAlert) {
+                                Alert(
+                                    title: Text("Are you sure?"),
+                                    message: Text("Permenantly delete your account? (This action cannot be reversed)"),
+                                    primaryButton: .cancel(),
+                                    secondaryButton: .destructive(Text("Delete"), action: {
+                                        Task {
+                                            await viewModel.deleteAccount()
+                                        }
+                                    })
+                                )
+                            }
                         }
                     }
                 }

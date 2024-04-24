@@ -15,7 +15,7 @@ struct LoginView: View {
     @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             VStack{
                 
                 // App Logo

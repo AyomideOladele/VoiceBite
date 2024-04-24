@@ -6,7 +6,9 @@
 
 import SwiftUI
 import AVFoundation
+import AVKit
 import Combine
+let synthesizer = AVSpeechSynthesizer()
 
 struct RecipeWalkthroughView: View {
     
@@ -14,8 +16,7 @@ struct RecipeWalkthroughView: View {
     @Environment(\.dismiss) var dismiss
     @State private var currentTab = 0
     @StateObject private var speechRecognizer = SpeechRecognizer()
-    let synthesizer = AVSpeechSynthesizer()
-    @AppStorage("chosenLanguage") private var chosenLanguage: String = "en-US"
+    @EnvironmentObject private var appSettingsModel: AppSettingsModel
     
     var body: some View {
         VStack {
@@ -50,6 +51,7 @@ struct RecipeWalkthroughView: View {
             .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
         }
         .onAppear {
+            speakCurrentInstruction()
             try? speechRecognizer.startListening()
         }
         .onDisappear {
@@ -57,24 +59,24 @@ struct RecipeWalkthroughView: View {
         }
         .onChange(of: currentTab) { _ in
             speakCurrentInstruction()
-            print("DEBUG: Current tab before command is handled \(currentTab)")
+            
         }
-        .onChange(of: speechRecognizer.command) { newCommand in
-                    handleCommand(newCommand)
-                }
+        .onChange(of: speechRecognizer.command) {
+            newCommand in handleCommand(newCommand)
+            print("DEBUG: Current tab after command is handled \(currentTab)")
+        }
     }
     
-    private func speakCurrentInstruction() {
-            let instruction = recipe.instructions[currentTab].description
-            let utterance = AVSpeechUtterance(string: instruction)
-            utterance.voice = AVSpeechSynthesisVoice(language: chosenLanguage)
-            synthesizer.speak(utterance)
-        }
-
+    
     private func handleCommand(_ command: String?) {
-        guard let command = command?.lowercased(), !command.isEmpty else { return }
-        DispatchQueue.main.async {
-            switch command {
+        guard let command = command?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased(), !command.isEmpty else { return }
+
+        // Split the command string into words
+        let words = command.split(separator: " ")
+        if let lastWord = words.last {
+            
+            // Process the last word of the command
+            switch String(lastWord) {
             case "next":
                 if currentTab < recipe.instructions.count - 1 {
                     currentTab += 1
@@ -85,9 +87,25 @@ struct RecipeWalkthroughView: View {
                     currentTab -= 1
                     print("DEBUG: Previous command recognised and executed, tab changed to \(currentTab).")
                 }
+            case "repeat":
+                speakCurrentInstruction()
+                print("DEBUG: Repeat command recognised and executed, instruction on tab \(currentTab) repeated.")
+                
             default:
-                print("DEBUG: Command not recognized.")
+                print("DEBUG: Command \(command) not recognized.")
             }
+        }
+    }
+    
+    
+    private func speakCurrentInstruction() {
+        print("DEBUG: Instruction called to speak on tab \(currentTab)")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            let instruction = recipe.instructions[currentTab].description
+            let utterance = AVSpeechUtterance(string: instruction)
+            utterance.rate = 0.4
+            utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+            synthesizer.speak(utterance)
         }
     }
 }

@@ -46,14 +46,12 @@ struct SignUpView: View {
                         if password == confirmPassword {
                             Image(systemName: "checkmark.circle")
                                 .imageScale(.large)
-                                .fontWeight(.bold)
                                 .foregroundColor(.green)
                                 .opacity(0.8)
                                 .offset(x: -8)
                         } else {
                             Image(systemName: "xmark.circle")
                                 .imageScale(.large)
-                                .fontWeight(.bold)
                                 .foregroundColor(.red)
                                 .opacity(0.8)
                                 .offset(x: -8)

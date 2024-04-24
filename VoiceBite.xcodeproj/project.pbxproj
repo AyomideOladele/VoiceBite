@@ -22,6 +22,10 @@
 		770C98962BCE9C1700BFADE8 /* RecipeDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C98952BCE9C1700BFADE8 /* RecipeDetailsView.swift */; };
 		770C98982BCFFF2300BFADE8 /* RecipeWalkthroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C98972BCFFF2300BFADE8 /* RecipeWalkthroughView.swift */; };
 		770C98B22BD2CA6600BFADE8 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C98AE2BD2B0EE00BFADE8 /* SpeechRecognizer.swift */; };
+		77A57F6A2BD86285002FF3C0 /* UserPreferencesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A57F692BD86285002FF3C0 /* UserPreferencesModel.swift */; };
+		77A57F6B2BD86285002FF3C0 /* UserPreferencesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A57F692BD86285002FF3C0 /* UserPreferencesModel.swift */; };
+		77A57F6D2BD87EFD002FF3C0 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A57F6C2BD87EFD002FF3C0 /* SettingsModel.swift */; };
+		77A57F6E2BD87EFD002FF3C0 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A57F6C2BD87EFD002FF3C0 /* SettingsModel.swift */; };
 		77B39A6A2B83B97200C31A99 /* VoiceBiteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A692B83B97200C31A99 /* VoiceBiteApp.swift */; };
 		77B39A6C2B83B97200C31A99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A6B2B83B97200C31A99 /* ContentView.swift */; };
 		77B39A6E2B83B97300C31A99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77B39A6D2B83B97300C31A99 /* Assets.xcassets */; };
@@ -67,6 +71,8 @@
 		770C98952BCE9C1700BFADE8 /* RecipeDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsView.swift; sourceTree = "<group>"; };
 		770C98972BCFFF2300BFADE8 /* RecipeWalkthroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeWalkthroughView.swift; sourceTree = "<group>"; };
 		770C98AE2BD2B0EE00BFADE8 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
+		77A57F692BD86285002FF3C0 /* UserPreferencesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferencesModel.swift; sourceTree = "<group>"; };
+		77A57F6C2BD87EFD002FF3C0 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		77B39A662B83B97200C31A99 /* VoiceBite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceBite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77B39A692B83B97200C31A99 /* VoiceBiteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceBiteApp.swift; sourceTree = "<group>"; };
 		77B39A6B2B83B97200C31A99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -164,6 +170,8 @@
 			isa = PBXGroup;
 			children = (
 				770C98782BBF28B800BFADE8 /* User.swift */,
+				77A57F692BD86285002FF3C0 /* UserPreferencesModel.swift */,
+				77A57F6C2BD87EFD002FF3C0 /* SettingsModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -432,10 +440,12 @@
 				77B39A732B83B97300C31A99 /* Persistence.swift in Sources */,
 				77B39A9D2B84105600C31A99 /* LoginView.swift in Sources */,
 				770C988D2BCD929000BFADE8 /* Recipe.swift in Sources */,
+				77A57F6A2BD86285002FF3C0 /* UserPreferencesModel.swift in Sources */,
 				770C98882BBF364C00BFADE8 /* AuthViewModel.swift in Sources */,
 				770C98792BBF28B800BFADE8 /* User.swift in Sources */,
 				770C98B22BD2CA6600BFADE8 /* SpeechRecognizer.swift in Sources */,
 				77B39AAB2B842C4200C31A99 /* SettingsView.swift in Sources */,
+				77A57F6D2BD87EFD002FF3C0 /* SettingsModel.swift in Sources */,
 				77B39A6C2B83B97200C31A99 /* ContentView.swift in Sources */,
 				770C98942BCDFC6C00BFADE8 /* RecipeCard.swift in Sources */,
 				770C98772BBF01BA00BFADE8 /* SettingsBox.swift in Sources */,
@@ -451,7 +461,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77A57F6E2BD87EFD002FF3C0 /* SettingsModel.swift in Sources */,
 				77B39A802B83B97400C31A99 /* VoiceBiteTests.swift in Sources */,
+				77A57F6B2BD86285002FF3C0 /* UserPreferencesModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,7 +542,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -584,7 +596,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -605,13 +617,14 @@
 				DEVELOPMENT_TEAM = 59A54ZY2BB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = VoiceBite;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded for voice commands and transcript.. Audio recordings are discareded once command s fufilled, and transcription is recorded.";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "You can use voice commands, and view a text transcription of your commands.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -637,13 +650,14 @@
 				DEVELOPMENT_TEAM = 59A54ZY2BB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = VoiceBite;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded for voice commands and transcript.. Audio recordings are discareded once command s fufilled, and transcription is recorded.";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "You can use voice commands, and view a text transcription of your commands.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

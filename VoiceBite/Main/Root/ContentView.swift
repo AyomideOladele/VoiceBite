@@ -10,6 +10,8 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var viewModel: AuthViewModel
+    @EnvironmentObject var appSettingsModel: AppSettingsModel
+    
 
     var body: some View {
         Group {
@@ -22,8 +24,10 @@ struct ContentView: View {
             } else {
                 LoginView()
             }
-        }
+        }.preferredColorScheme(appSettingsModel.isDarkMode ? .dark : .light)
     }
+    
+
 }
 
 

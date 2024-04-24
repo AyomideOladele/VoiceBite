@@ -2,9 +2,9 @@
 //  Recipe.swift
 //  VoiceBite
 //
-//  Created by Ayomide Oladele on 15/04/2024.
+// A simple data model for a recipe
 //
-// Development goal: Link recipes with Firebase database?
+// TODO: Link recipes with Firebase database?
 
 import Foundation
 

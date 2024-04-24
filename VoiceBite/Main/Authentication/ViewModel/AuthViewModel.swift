@@ -18,23 +18,33 @@ protocol AuthenticationFormProtocol {
 
 @MainActor
 class AuthViewModel: ObservableObject {
+    
     @Published var userSession: FirebaseAuth.User? //Stores whether a user is logged in
     @Published var currentUser: User? // Stores current users details
     @Published var errorMessage: String?
+    @Published var preferencesModel: UserPreferencesModel?
     
     // Initialises the view model by checking if a user is currently logged in
     init(){
         self.userSession = Auth.auth().currentUser
+        if let user = userSession {
+                    self.preferencesModel = UserPreferencesModel(userId: user.uid)
+                }
         Task {
             await fetchUser() // Fetches user data if they are logged in
         }
     }
+    
+    func setupPreferencesModel(userId: String) {
+            self.preferencesModel = UserPreferencesModel(userId: userId)
+        }
     
     // Attempts to sign user in using user input and set current session
     func signIn(withEmail email: String, password: String) async throws {
         do {
             let result = try await Auth.auth().signIn(withEmail: email, password: password)
             self.userSession = result.user
+            self.preferencesModel = UserPreferencesModel(userId: result.user.uid)
             await fetchUser()
             errorMessage = nil // No error occured, so error message is empty
         } catch {
@@ -48,7 +58,10 @@ class AuthViewModel: ObservableObject {
         do {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
             self.userSession = result.user
-            let user = User(id: result.user.uid, fullname: fullname, email: email)
+            let user = User(id: result.user.uid, fullname: fullname, email: email,
+                            isDarkMode: false, chosenLanguage: "en-US", soundVolume: 50.0,
+                            textToSpeechEnabled: true, speechRecognitionEnabled: true)
+            self.preferencesModel = UserPreferencesModel(userId: result.user.uid)
             let encodedUser = try Firestore.Encoder().encode(user) // Converts user details into form firebase can handle
             try await Firestore.firestore().collection("users").document(user.id).setData(encodedUser)
             await fetchUser()

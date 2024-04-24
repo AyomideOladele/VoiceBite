@@ -2,8 +2,7 @@
 //  User.swift
 //  VoiceBite
 //
-//  Created by Ayomide Oladele on 04/04/2024.
-//
+// A simple data model for a user, defines properties: id, fullname and email.
 
 import Foundation
 
@@ -11,21 +10,23 @@ struct User: Identifiable, Codable {
     let id: String
     let fullname: String
     let email: String
-    //let password: String
-    
-    // Retrieves users initals from their full name, returns empty string if invalid
-    var initials: String {
-        let formatter = PersonNameComponentsFormatter()
-        if let components = formatter.personNameComponents(from: fullname){
-            formatter.style = .abbreviated
-            return formatter.string(from: components)
-        }
-        return ""
-    }
+    var isDarkMode: Bool
+    var chosenLanguage: String
+    var soundVolume: Double
+    var textToSpeechEnabled: Bool
+    var speechRecognitionEnabled: Bool
 }
 
+// Mock user, for testing
 extension User {
-    static var MOCK_USER = User(id: NSUUID().uuidString, fullname: "Ayo Oladele", email: "email@emails.com")
-    
-    //    static var MOCK_USER = User(id: NSUUID().uuidString, fullname: "Ayo Oladele", givenName: "Ayo", email: "email@emails.com", password: ".............")
+    static var MOCK_USER = User(
+        id: NSUUID().uuidString,
+        fullname: "User's Name",
+        email: "email@emails.com",
+        isDarkMode: false,
+        chosenLanguage: "en-US",
+        soundVolume: 50.0,
+        textToSpeechEnabled: true,
+        speechRecognitionEnabled: true
+    )
 }

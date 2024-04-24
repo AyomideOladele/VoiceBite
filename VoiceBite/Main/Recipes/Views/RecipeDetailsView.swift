@@ -11,7 +11,7 @@ struct RecipeDetailsView: View {
     var recipe: Recipe
     @Environment(\.dismiss) var dismiss
     var body: some View {
-        NavigationStack{
+        NavigationView{
             ScrollView{
                 VStack{
                     VStack{

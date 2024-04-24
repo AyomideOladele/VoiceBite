@@ -2,45 +2,42 @@
 //  SpeechRecognizer.swift
 //  VoiceBite
 //
-//  Created by Ayomide Oladele on 15/04/2024.
-//
 
 import Foundation
 import AVFoundation
 import Speech
 
 class SpeechRecognizer: ObservableObject {
-    private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en-US"))!
-    private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
-    private var recognitionTask: SFSpeechRecognitionTask?
-    private let audioEngine = AVAudioEngine()
     
-    @Published var command: String?
-    @Published var audioLevel: Float = 0.0  // For displaying the audio input level
+    private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en-GB"))!
+    private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest? // Processes audio data
+    private var recognitionTask: SFSpeechRecognitionTask? // Processes result of speech recognizer
+    private let audioEngine = AVAudioEngine() // Manages audio input
+    @Published var command: String? // Stores recognized commands from RecipeWalkthrough.swift
+    private var lastProcessedCommand: String?
     
     // Timer to restart the audio buffer periodically
     private var restartTimer: Timer?
-    
     // Interval for restarting the audio buffer
     private let restartInterval: TimeInterval = 3 // Adjust this time based on your need
     
     init() {
         requestPermission()
-        setupAudioBufferRestart()
     }
     
     func setupAudioBufferRestart() {
-        restartTimer = Timer.scheduledTimer(withTimeInterval: restartInterval, repeats: true) { [weak self] _ in
-            self?.restartAudioBuffer()
+            restartTimer = Timer.scheduledTimer(withTimeInterval: restartInterval, repeats: true) { [weak self] _ in
+                self?.restartAudioBuffer()
+            }
         }
-    }
     
     func restartAudioBuffer() {
         stopListening()
         do {
             try startListening()
+            print("DEBUG: Restarted audio buffer")
         } catch {
-            print("Failed to restart listening: \(error)")
+            print("DEBUG: Failed to restart listening: \(error)")
         }
     }
     
@@ -50,7 +47,7 @@ class SpeechRecognizer: ObservableObject {
                 switch authStatus {
                 case .authorized:
                     print("DEBUG: Permission to use speech recognition granted.")
-                    self.restartAudioBuffer()
+                    //self.restartAudioBuffer()
                 default:
                     print("DEBUG: Authorization to use speech recognition denied.")
                 }
@@ -88,51 +85,47 @@ class SpeechRecognizer: ObservableObject {
         
         let inputNode = audioEngine.inputNode
         
-        // Set up recognition task
-        /*recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest!) { [weak self] result, error in
-            var isFinal = false
-            
-            if let result = result {
-                DispatchQueue.main.async {
-                    self?.command = result.bestTranscription.formattedString
-                    isFinal = result.isFinal
-                }
-            }
-            
-            if error != nil || isFinal {
-                self?.stopListening()
-            }
-        }*/
-        
         recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest!) { [weak self] result, error in
             var isFinal = false
             
             if let result = result {
                 DispatchQueue.main.async {
-                    self?.command = result.bestTranscription.formattedString
-                    isFinal = result.isFinal
-                    if isFinal {
-                        self?.command = nil // Clear command right after setting it to avoid duplicate processing
+                    let newCommand = result.bestTranscription.formattedString
+                    
+                    if newCommand != self?.lastProcessedCommand {
+                                    self?.command = newCommand
+                   
+                        isFinal = result.isFinal
+                            if isFinal{
+                                self!.command = ""
+                                self?.handleCommand(from: newCommand)
+                                self?.lastProcessedCommand = newCommand
+                                print("DEBUG: Command recognsed \(newCommand)")
+                        }
                     }
                 }
             }
-            
-            if error != nil || isFinal {
-                self?.stopListening()
-            }
+            if let error = error {
+                    print("DEBUG: Recognition task failed with error: \(error)")
+                    DispatchQueue.main.async {
+                        self?.restartAudioBuffer()
+                    }
+                } else if isFinal {
+                    self?.stopListening()
+                }
         }
-
-        
         
         // Install tap on inputNode
         let recordingFormat = inputNode.outputFormat(forBus: 0)
         inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { [weak self] buffer, when in
+            //print("DEBUG: Audio buffer received: \(buffer)")
             self?.recognitionRequest?.append(buffer)
         }
         
-        
         audioEngine.prepare()
         try audioEngine.start()
+        
+        print("DEBUG: Audio engine started successfully.")
     }
     
     func stopListening() {
@@ -142,13 +135,23 @@ class SpeechRecognizer: ObservableObject {
             audioEngine.inputNode.removeTap(onBus: 0)
         }
     }
-    
+
     private func handleCommand(from text: String) {
+        //clearCommand()
         DispatchQueue.main.async {
-            print("Received command: \(text)")
-            self.command = nil  // Clear the command immediately after receiving it to prevent reprocessing
-            print("Emptied command: \(text)")
+            //print("DEBUG: Received command: \(text)")
+            //self.command = nil  // Clear the command immediately after receiving it to prevent reprocessing
+            
+            print("DEBUG: Command handled and cleared: \(text)")
+        }
+        //clearCommand()
+    }
+    
+    func clearCommand() {
+        DispatchQueue.main.async {
+            self.command = nil
         }
     }
     
 }
+

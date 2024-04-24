@@ -11,7 +11,7 @@ struct RecipesDirectoryView: View {
     @ObservedObject var recipeManager: RecipeManager
     @State var selectedRecipe: Recipe? = nil
     var body: some View {
-        NavigationStack {
+        NavigationView {
             ScrollView {
                 LazyVGrid(columns: [
                     GridItem(.flexible(minimum:100, maximum: 200)),
