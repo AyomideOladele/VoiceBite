@@ -2,18 +2,25 @@
 //  RecipeDetailsView.swift
 //  VoiceBite
 //
-//  Created by Ayomide Oladele on 16/04/2024.
+// A view displays recipe details as a full cover screen - start button begins recipe walkthrough
 //
 
 import SwiftUI
 
 struct RecipeDetailsView: View {
+    @ObservedObject var recipeManager: RecipeManager
     var recipe: Recipe
     @Environment(\.dismiss) var dismiss
+    private let gridItems = [GridItem(.flexible()), GridItem(.flexible())]
     var body: some View {
         NavigationView{
             ScrollView{
                 VStack{
+                    
+                    Text(recipe.title)
+                        .font(.title)
+                        .bold()
+                    
                     VStack{
                         Image(recipe.imageName)
                             .resizable()
@@ -24,11 +31,23 @@ struct RecipeDetailsView: View {
                     }
                     .background(.ultraThinMaterial)
                     .cornerRadius(15)
-                    .padding()
+                    //.padding()
                     
-                    Text(recipe.title)
-                        .font(.title)
-                        .bold()
+                    // Create the LazyVGrid
+                    LazyVGrid(columns: gridItems, spacing: 20) {
+                        // First column, first row
+                        ForEach(recipe.nutritionalInformation, id: \.self) {nutrition in
+                            VStack {
+                                Text(nutrition.value)
+                                    .font(.title3)  // Title font
+                                    .fontWeight(.bold)
+                                Text(nutrition.measurement)
+                                    .font(.caption)  // Caption font
+                                    .foregroundColor(.secondary)
+                            }
+                        }
+                    }
+                    .padding()  // Add padding around the grid
                     
                     VStack (alignment: .leading){
                         VStack (alignment: .leading){
@@ -85,8 +104,6 @@ struct RecipeDetailsView: View {
                             }.foregroundColor(Color("ButtonTextColor"))
                                 .background(Color("AccentColor"))
                                 .cornerRadius(15)
-                            //.padding(.top, 50.0)
-                            //.font(.system(size: 14))
                             
                     }.padding([.top, .horizontal])
                 }
@@ -103,6 +120,6 @@ struct RecipeDetailsView_Previews: PreviewProvider {
     static var previews: some View {
         
         let manager = RecipeManager()
-        RecipeDetailsView(recipe: manager.recipes[0])
+        RecipeDetailsView(recipeManager: RecipeManager(), recipe: manager.recipes[0])
     }
 }

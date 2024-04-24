@@ -36,13 +36,10 @@ struct RecipeWalkthroughView: View {
                         
                         Text(recipe.instructions[index].description)
                             .padding()
-                        
-                        if let command = speechRecognizer.command {
-                            Text("Heard: \(command)")
-                                .padding()
-                                .transition(.slide)
-                                .animation(.easeInOut, value: speechRecognizer.command)
-                        }
+                       
+                        Image(systemName: "mic.circle.fill")
+                            .font(.system(size: 100))
+                            .foregroundColor(Color("AccentColor"))
                     }
                     .tag(index)
                 }
@@ -53,13 +50,15 @@ struct RecipeWalkthroughView: View {
         .onAppear {
             speakCurrentInstruction()
             try? speechRecognizer.startListening()
+            //isSpeechRecognizing = true
         }
         .onDisappear {
+            synthesizer.stopSpeaking(at: .immediate)
             speechRecognizer.stopListening()
         }
         .onChange(of: currentTab) { _ in
+            synthesizer.stopSpeaking(at: .immediate)
             speakCurrentInstruction()
-            
         }
         .onChange(of: speechRecognizer.command) {
             newCommand in handleCommand(newCommand)
@@ -77,20 +76,24 @@ struct RecipeWalkthroughView: View {
             
             // Process the last word of the command
             switch String(lastWord) {
-            case "next":
+            case "next", "continue":
                 if currentTab < recipe.instructions.count - 1 {
                     currentTab += 1
                     print("DEBUG: Next command recognised and executed, tab changed to \(currentTab).")
                 }
-            case "previous":
+            case "previous", "back":
                 if currentTab > 0 {
                     currentTab -= 1
                     print("DEBUG: Previous command recognised and executed, tab changed to \(currentTab).")
                 }
-            case "repeat":
+            case "repeat", "again":
                 speakCurrentInstruction()
                 print("DEBUG: Repeat command recognised and executed, instruction on tab \(currentTab) repeated.")
                 
+            case "exit", "end", "finish":
+                dismiss()
+                print("DEBUG: exit command recognised and executed, view dismissed")
+            
             default:
                 print("DEBUG: Command \(command) not recognized.")
             }
@@ -100,7 +103,7 @@ struct RecipeWalkthroughView: View {
     
     private func speakCurrentInstruction() {
         print("DEBUG: Instruction called to speak on tab \(currentTab)")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             let instruction = recipe.instructions[currentTab].description
             let utterance = AVSpeechUtterance(string: instruction)
             utterance.rate = 0.4
@@ -108,6 +111,7 @@ struct RecipeWalkthroughView: View {
             synthesizer.speak(utterance)
         }
     }
+    
 }
 
 struct RecipeStepView_Previews: PreviewProvider {

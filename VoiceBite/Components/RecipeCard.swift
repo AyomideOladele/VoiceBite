@@ -37,6 +37,6 @@ struct RecipeCard: View {
 struct RecipeCard_Previews: PreviewProvider {
     static var previews: some View {
         let manager = RecipeManager()
-        RecipeDetailsView(recipe: manager.recipes[0])
+        RecipeCard(recipe: manager.recipes[0])
     }
 }

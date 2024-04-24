@@ -23,7 +23,7 @@ struct RecipesDirectoryView: View {
                             .onTapGesture {
                                 selectedRecipe = recipe
                             }.fullScreenCover(item: $selectedRecipe) {selectedRecipe in
-                                RecipeDetailsView(recipe: selectedRecipe)}
+                                RecipeDetailsView(recipeManager: RecipeManager(), recipe: selectedRecipe)}
                 }
                     
             }
