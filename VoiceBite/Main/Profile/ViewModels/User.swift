@@ -13,8 +13,6 @@ struct User: Identifiable, Codable {
     var isDarkMode: Bool
     var chosenLanguage: String
     var soundVolume: Double
-    var textToSpeechEnabled: Bool
-    var speechRecognitionEnabled: Bool
 }
 
 // Mock user, for testing
@@ -25,8 +23,6 @@ extension User {
         email: "email@emails.com",
         isDarkMode: false,
         chosenLanguage: "en-US",
-        soundVolume: 50.0,
-        textToSpeechEnabled: true,
-        speechRecognitionEnabled: true
+        soundVolume: 50.0
     )
 }

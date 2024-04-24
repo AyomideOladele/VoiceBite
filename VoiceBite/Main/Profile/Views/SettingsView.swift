@@ -33,18 +33,6 @@ struct SettingsView: View {
                     }
                     
                     HStack{
-                        SettingsBox(imageName: "mic", label: "Speech Recognition", iconColour: .secondary)
-                        Toggle("", isOn: $userPreferencesModel.userPreferences.speechRecognitionEnabled
-                        ).onChange(of: userPreferencesModel.userPreferences.speechRecognitionEnabled) { _ in updatePreferences()}
-                    }
-                    
-                    HStack{
-                        SettingsBox(imageName: "mic.circle", label: "Text To Speech", iconColour: .secondary)
-                        Toggle("", isOn: $userPreferencesModel.userPreferences.textToSpeechEnabled).onChange(of: userPreferencesModel.userPreferences.textToSpeechEnabled) { _ in
-                            updatePreferences()}
-                    }
-                    
-                    HStack{
                         SettingsBox(imageName: "mic.circle.fill", label: "Text To Speech Voice", iconColour: .secondary)
                         Spacer()
                         Picker("Select a language", selection: $userPreferencesModel.userPreferences.chosenLanguage) {

@@ -18,7 +18,6 @@ struct AccountView: View {
         if let user = viewModel.currentUser {
             NavigationView{
                 VStack{
-                    
                     Text("MY ACCOUNT")
                         .fontWeight(.bold)
                         .foregroundColor(Color("AccentColor"))

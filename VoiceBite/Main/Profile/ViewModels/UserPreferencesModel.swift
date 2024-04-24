@@ -15,7 +15,7 @@ class UserPreferencesModel: ObservableObject {
 
     init(userId: String) {
         self.userId = userId
-        self.userPreferences = User(id: userId, fullname: "", email: "", isDarkMode: false, chosenLanguage: "en-US", soundVolume: 50.0, textToSpeechEnabled: true, speechRecognitionEnabled: true)
+        self.userPreferences = User(id: userId, fullname: "", email: "", isDarkMode: false, chosenLanguage: "en-US", soundVolume: 50.0)
         Task {
             await fetchPreferences(userId: userId)
         }
