@@ -22,6 +22,7 @@ struct VoiceBiteApp: App {
     // Configures and displays the first view of the app
     var body: some Scene {
         WindowGroup {
+            //LoginView()
             SplashScreenView()
                 .environmentObject(viewModel) // Passes authentication model to first view
                 .environmentObject(viewModel.preferencesModel!)

@@ -2,7 +2,7 @@
 //  RecipesSearchView.swift
 //  VoiceBite
 //
-//  Created by Ayomide Oladele on 15/04/2024.
+//  A view displaying all recipes in Recipe Manager in a grid view
 //
 
 import SwiftUI

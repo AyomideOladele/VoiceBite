@@ -55,6 +55,7 @@ struct RecipeDetailsView: View {
                             Text("Ingredients")
                                 .font(.title2)
                                 .bold()
+                                .frame(maxWidth: .infinity, alignment: .center)
                             
                             ScrollView(.horizontal, showsIndicators: false) {
                                 LazyHStack(spacing: -10) {
@@ -68,7 +69,32 @@ struct RecipeDetailsView: View {
                                                 .cornerRadius(6)
                                         }.padding(.horizontal)
                                 }
-                            }.frame(height: 100)
+                            }.frame(height: 60)
+                                .font(.body)
+                                .foregroundColor(Color("TextColor"))
+                        }
+                        .padding([.top, .horizontal])
+                        
+                        VStack (alignment: .leading){
+                            
+                            Text("Utensils")
+                                .font(.title2)
+                                .bold()
+                                .frame(maxWidth: .infinity, alignment: .center)
+                            
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                LazyHStack(spacing: -10) {
+                                    ForEach(Array(recipe.utensils
+                                        .enumerated()), id: \.element) {
+                                            index, utensils in
+                                            Text(utensils)
+                                                .foregroundColor(Color("TextColor"))
+                                                .padding(10)
+                                                .background(.ultraThinMaterial)
+                                                .cornerRadius(6)
+                                        }.padding(.horizontal)
+                                }
+                            }.frame(height: 60)
                                 .font(.body)
                                 .foregroundColor(Color("TextColor"))
                         }
@@ -79,12 +105,18 @@ struct RecipeDetailsView: View {
                             Text("Instructions")
                                 .font(.title2)
                                 .bold()
+                                .frame(maxWidth: .infinity, alignment: .center)
                             
                             LazyVStack (alignment: .leading){
                                 ForEach(Array(recipe.instructions.enumerated()), id: \.element) { index, instruction in
-                                    Text("\(index + 1)) \(instruction.description)")
+                                    HStack{
+                                        Text("\(index + 1))")
+                                            .bold()
+                                        Text ("\(instruction.description)")
+                                    }
                                         .foregroundColor(Color("TextColor"))
                                         .padding(10)
+                                        .frame(maxWidth: .infinity, alignment: .center)
                                 }
                             }
                         }

@@ -12,7 +12,6 @@ struct User: Identifiable, Codable {
     let email: String
     var isDarkMode: Bool
     var chosenLanguage: String
-    var soundVolume: Double
 }
 
 // Mock user, for testing
@@ -22,7 +21,6 @@ extension User {
         fullname: "User's Name",
         email: "email@emails.com",
         isDarkMode: false,
-        chosenLanguage: "en-US",
-        soundVolume: 50.0
+        chosenLanguage: "en-US"
     )
 }

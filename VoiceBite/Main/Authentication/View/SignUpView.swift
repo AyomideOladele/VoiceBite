@@ -86,6 +86,7 @@ struct SignUpView: View {
             .cornerRadius(15)
             .padding(.top, 40.0)
             .accessibilityLabel("Signup button")
+            
             // Displays alert if error occurs during authentication (i.e. email address already in use)
             // Gets error message if not nil in viewModel, sets it to nil after alert has been displayed
             .alert("Error", isPresented: Binding<Bool>(

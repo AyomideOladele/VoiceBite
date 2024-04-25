@@ -22,15 +22,6 @@ struct SettingsView: View {
                     .font(.title)
                 
                 List{
-                    HStack{
-                        SettingsBox(imageName: "speaker", label: "Volume", iconColour: .secondary)
-                        
-                        Spacer()
-                        Slider(
-                            value: $userPreferencesModel.userPreferences.soundVolume,
-                            in: 0...100, step: 5
-                        ).onChange(of: userPreferencesModel.userPreferences.soundVolume) { _ in updatePreferences()}
-                    }
                     
                     HStack{
                         SettingsBox(imageName: "mic.circle.fill", label: "Text To Speech Voice", iconColour: .secondary)

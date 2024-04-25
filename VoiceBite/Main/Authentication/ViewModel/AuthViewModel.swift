@@ -59,7 +59,7 @@ class AuthViewModel: ObservableObject {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
             self.userSession = result.user
             let user = User(id: result.user.uid, fullname: fullname, email: email,
-                            isDarkMode: false, chosenLanguage: "en-US", soundVolume: 50.0)
+                            isDarkMode: false, chosenLanguage: "en-US")
             self.preferencesModel = UserPreferencesModel(userId: result.user.uid)
             let encodedUser = try Firestore.Encoder().encode(user) // Converts user details into form firebase can handle
             try await Firestore.firestore().collection("users").document(user.id).setData(encodedUser)
