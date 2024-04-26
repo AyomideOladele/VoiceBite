@@ -36,12 +36,12 @@ struct RecipeDetailsView: View {
                     // Create the LazyVGrid
                     LazyVGrid(columns: gridItems, spacing: 20) {
                         // First column, first row
-                        ForEach(recipe.nutritionalInformation, id: \.self) {nutrition in
+                        ForEach(recipe.recipeMetrics, id: \.self) {Metric in
                             VStack {
-                                Text(nutrition.value)
+                                Text(Metric.detail)
                                     .font(.title3)  // Title font
                                     .fontWeight(.bold)
-                                Text(nutrition.measurement)
+                                Text(Metric.label)
                                     .font(.caption)  // Caption font
                                     .foregroundColor(.secondary)
                             }
@@ -122,6 +122,35 @@ struct RecipeDetailsView: View {
                         }
                         .frame(maxHeight: .infinity, alignment: .top)
                         .padding()
+                        
+                        Text("Nutritional Information")
+                            .font(.title2)
+                            .bold()
+                            .frame(maxWidth: .infinity, alignment: .center)
+                        
+                        HStack{
+                            Text("Carbs:")
+                            Text("\(recipe.nutritionalInfo[0])")
+                                .bold()
+                                .foregroundColor(Color("TextColor"))
+                                .padding(10)
+                        }.frame(maxWidth: .infinity, alignment: .center)
+                        
+                        HStack{
+                            Text("Fats:")
+                            Text("\(recipe.nutritionalInfo[1])")
+                                .bold()
+                                .foregroundColor(Color("TextColor"))
+                                .padding(10)
+                        }.frame(maxWidth: .infinity, alignment: .center)
+                        
+                        HStack{
+                            Text("Proteins:")
+                            Text("\(recipe.nutritionalInfo[2])")
+                                .bold()
+                                .foregroundColor(Color("TextColor"))
+                                .padding(10)
+                        }.frame(maxWidth: .infinity, alignment: .center)
                     }
                         VStack{
                             // Navigates to 1st recipe instruction by adding it to the stack
