@@ -2,6 +2,7 @@
 //  UserPreferencesModel.swift
 //  VoiceBite
 //
+// Responsible for managing user preferences
 
 import Foundation
 import Firebase

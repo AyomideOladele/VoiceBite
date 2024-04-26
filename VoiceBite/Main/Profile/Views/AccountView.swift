@@ -4,7 +4,6 @@
 //
 // A view displaying users account information, including options to sign out and delete account
 //
-// TODO: Add password reset functionality
 
 import SwiftUI
 
@@ -45,15 +44,6 @@ struct AccountView: View {
                         
                         Section("Account"){
                             
-                            /*
-                            // Reset password button
-                            Button {
-                                //TODO: viewModel.resetPassword()
-                            } label: {
-                                SettingsBox(imageName: "arrow.clockwise.circle.fill", label: "Reset Password", iconColour: .red)
-                            }
-                            .accessibilityLabel("Reset Password")*/
-                            
                             // Sign Out Button
                             Button {
                                 viewModel.signOut()
@@ -69,8 +59,7 @@ struct AccountView: View {
                                 SettingsBox(imageName: "xmark.circle.fill", label: "Delete Account", iconColour: .red)
                             }
                             .accessibilityLabel("Delete Account")
-                            // Displays alert if error occurs during authentication (i.e. email address already in use)
-                            // Gets error message if not nil in viewModel, sets it to nil after alert has been displayed
+                            // Displays alert to confirm account deletion
                             .alert(isPresented: $showingAlert) {
                                 Alert(
                                     title: Text("Are you sure?"),

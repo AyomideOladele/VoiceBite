@@ -15,14 +15,21 @@ struct RecipesDirectoryView: View {
     var body: some View {
         NavigationView {
             ScrollView {
+                
+                Text("MY RECIPES")
+                    .fontWeight(.bold)
+                    .foregroundColor(Color("AccentColor"))
+                    .font(.title)
+                
                 HStack {
                     HStack{
                         TextField("Search here", text: $searchTerm)
                             .padding(.leading, 24)
-                    } .padding().background(Color("LightGray"))
+                    } .padding()
+                        .background(Color("lightGray"))
+                        .frame(width: 210, height:40)
                         .cornerRadius(6)
                         .padding(.horizontal)
-                        .frame(width: 250, height: 80)
                         .onTapGesture(perform: {
                             isSearching = true
                         })
@@ -30,7 +37,6 @@ struct RecipesDirectoryView: View {
                             HStack {
                                 Image(systemName: "magnifyingglass")
                                 Spacer()
-                                
                                 if isSearching {
                                     Button(action: { searchTerm = ""
                                         
@@ -38,9 +44,7 @@ struct RecipesDirectoryView: View {
                                         Image(systemName: "xmark.circle")
                                             .padding(.vertical)
                                     })
-                                    
                                 }
-                                
                             }.padding(.horizontal, 32)
                             .foregroundColor(Color("TextColor"))
                         ).transition(.move(edge: .trailing))
@@ -60,7 +64,7 @@ struct RecipesDirectoryView: View {
                             
                         })
                         .transition(.move(edge: .trailing))
-                        .animation(Animation.spring(), value:2)
+                        .animation(Animation.spring(), value:20)
                     }
                 }.frame(height: 80)
                 
@@ -80,7 +84,6 @@ struct RecipesDirectoryView: View {
                     
             }
         )} .padding(.horizontal, 15) // spacing at edges of page
-            .navigationTitle("Recipes")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     NavigationLink(destination: SettingsView()) {
@@ -106,7 +109,7 @@ struct RecipesDirectoryView: View {
 }
 
 
-struct RecipesSearchView_Previews: PreviewProvider {
+struct RecipesDirectoryView_Previews: PreviewProvider {
     static var previews: some View {
         RecipesDirectoryView(recipeManager: RecipeManager())
     }

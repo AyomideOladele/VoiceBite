@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var viewModel: AuthViewModel
-    @EnvironmentObject var appSettingsModel: AppSettingsModel
+    //@EnvironmentObject var appSettingsModel: AppSettingsModel
     
 
     var body: some View {
@@ -24,7 +24,7 @@ struct ContentView: View {
             } else {
                 LoginView()
             }
-        }.preferredColorScheme(appSettingsModel.isDarkMode ? .dark : .light)
+        }//.preferredColorScheme(appSettingsModel.isDarkMode ? .dark : .light)
     }
     
 

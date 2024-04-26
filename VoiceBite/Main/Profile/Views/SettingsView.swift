@@ -3,18 +3,21 @@
 //  VoiceBite
 //
 //
-//
 
 import SwiftUI
 
 struct SettingsView: View {
-    @EnvironmentObject var userPreferencesModel: UserPreferencesModel
-    @EnvironmentObject var appSettingsModel: AppSettingsModel
-    let languages = ["en-GB", "en-US", "en-NZ", "en-AU"]
+    
+    @State private var isDarkMode: Bool = false
+    @State private var chosenLanguage: String = "en-US"
+    @EnvironmentObject var viewModel: AuthViewModel
+       
+    let languages = ["en-GB", "en-US", "en-AU"]
     
     var body: some View {
         NavigationView{
             VStack{
+                
                 Text("SETTINGS")
                     .fontWeight(.bold)
                     .foregroundColor(Color("AccentColor"))
@@ -22,47 +25,55 @@ struct SettingsView: View {
                     .font(.title)
                 
                 List{
-                    
                     HStack{
                         SettingsBox(imageName: "mic.circle.fill", label: "Text To Speech Voice", iconColour: .secondary)
                         Spacer()
-                        Picker("Select a language", selection: $userPreferencesModel.userPreferences.chosenLanguage) {
+                        Picker("Select a language",
+                               selection: $chosenLanguage) {
                             ForEach(languages, id: \.self) {
                                 Text($0)
                             }
                         }.pickerStyle(.menu)
-                            .onChange(of: userPreferencesModel.userPreferences.chosenLanguage) { _ in
-                                updatePreferences()
+                        .onChange(of: chosenLanguage) { newLanguage in
+                            Task {
+                                do {
+                                    try await viewModel.updateUserPreferences(isDarkMode: isDarkMode, chosenLanguage: newLanguage)
+                                } catch {
+                                    print("Error updating user preferences: \(error.localizedDescription)")
+                                }
                             }
+                        }
                     }
                     
                     HStack{
                         SettingsBox(imageName: "moon", label: "Dark Mode", iconColour: .secondary)
-                        Toggle("", isOn: $userPreferencesModel.userPreferences.isDarkMode)
-                            .onChange(of: userPreferencesModel.userPreferences.isDarkMode) { _ in
-                                updatePreferences()
+                        Toggle("", isOn: $isDarkMode)
+                            .onChange(of: isDarkMode)
+                        { newValue in
+                            Task {
+                                do {
+                                    try await viewModel.updateUserPreferences(isDarkMode: newValue, chosenLanguage: chosenLanguage)
+                                } catch {
+                                    print("Error updating user preferences: \(error.localizedDescription)")
+                                }
                             }
+                        }
                     }
                 }
-            }
-            }.onReceive(userPreferencesModel.$userPreferences) { preferences in
-                appSettingsModel.isDarkMode = preferences.isDarkMode
-        }
-        
-    }
-    
-    func updatePreferences() {
-        Task {
-            do {
-                try await userPreferencesModel.updatePreferences()
-            } catch {
-                print("DEBUG: Error updating preferences: \(error.localizedDescription)")
+            }.onAppear {
+                if let user = viewModel.currentUser {
+                    isDarkMode = user.isDarkMode
+                    chosenLanguage = user.chosenLanguage
+                }
             }
         }
     }
 }
+
 struct SettingsScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        SettingsView().environmentObject(AuthViewModel())
     }
 }
+
+

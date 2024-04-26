@@ -15,10 +15,13 @@ struct RecipeWalkthroughView: View {
     var recipe: Recipe
     @Environment(\.dismiss) var dismiss
     @State private var currentTab = 0
+    @State private var chosenLanguage = "en-US"
     @StateObject private var speechRecognizer = SpeechRecognizer()
-    @EnvironmentObject private var appSettingsModel: AppSettingsModel
+    @EnvironmentObject var viewModel: AuthViewModel
+    //@EnvironmentObject private var appSettingsModel: AppSettingsModel
     
     var body: some View {
+            
         VStack {
             TabView(selection: $currentTab) {
                 ForEach(recipe.instructions.indices, id: \.self) { index in
@@ -34,8 +37,22 @@ struct RecipeWalkthroughView: View {
                         Image(systemName: "\(index + 1).circle.fill")
                             .imageScale(.large)
                         
+                        
                         Text(recipe.instructions[index].description)
                             .padding()
+                            .font(.system(size: 20, weight: .bold))
+                        
+                        ForEach(recipe.instructions[index].details, id: \.self) { detail in
+                            Text(detail)
+                                .font(.system(size: 14))
+                                .foregroundColor(Color("TextColor"))
+                                .padding(.horizontal, 20)
+                                .padding(.vertical, 10)
+                                .frame(alignment: .center)
+                                .multilineTextAlignment(.center)
+                        }
+                        
+                        
                        
                         Image(systemName: "mic.circle.fill")
                             .font(.system(size: 100))
@@ -50,7 +67,6 @@ struct RecipeWalkthroughView: View {
         .onAppear {
             speakCurrentInstruction()
             try? speechRecognizer.startListening()
-            //isSpeechRecognizing = true
         }
         .onDisappear {
             synthesizer.stopSpeaking(at: .immediate)
@@ -100,21 +116,35 @@ struct RecipeWalkthroughView: View {
         }
     }
     
+    private func setTTSLanguage () {
+            if let user = viewModel.currentUser {
+                chosenLanguage = user.chosenLanguage
+            }
+    }
+    
     
     private func speakCurrentInstruction() {
         print("DEBUG: Instruction called to speak on tab \(currentTab)")
+        setTTSLanguage ()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             let instruction = recipe.instructions[currentTab].description
             let utterance = AVSpeechUtterance(string: instruction)
-            utterance.rate = 0.4
-            utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+            utterance.voice = AVSpeechSynthesisVoice(language: "cs")
             synthesizer.speak(utterance)
+        
+            let details = recipe.instructions[currentTab].details
+            
+            for detail in details {
+                let utterance = AVSpeechUtterance(string: detail)
+                synthesizer.speak(utterance)
+            }
         }
+        
     }
     
 }
 
-struct RecipeStepView_Previews: PreviewProvider {
+struct RecipeWalkthroughView_Previews: PreviewProvider {
     static var previews: some View {
         let manager = RecipeManager()
         RecipeWalkthroughView(recipe: manager.recipes[0])

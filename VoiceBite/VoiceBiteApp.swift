@@ -13,7 +13,7 @@ import Firebase
 struct VoiceBiteApp: App {
     
     @StateObject var viewModel = AuthViewModel() // Authentication model for VoiceBite, used across the appliation
-    @StateObject private var appSettingsModel = AppSettingsModel(isDarkMode: false)
+    //@StateObject private var appSettingsModel = AppSettingsModel(isDarkMode: false)
     
     init(){
         FirebaseApp.configure()
@@ -25,8 +25,8 @@ struct VoiceBiteApp: App {
             //LoginView()
             SplashScreenView()
                 .environmentObject(viewModel) // Passes authentication model to first view
-                .environmentObject(viewModel.preferencesModel!)
-                .environmentObject(appSettingsModel)
+                //.environmentObject(viewModel.preferencesModel!)
+                //.environmentObject(appSettingsModel)
         }
     }
 }

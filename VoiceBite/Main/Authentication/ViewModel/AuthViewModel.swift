@@ -3,13 +3,11 @@
 //  VoiceBite
 //
 // Manages the authentication state of the user
-//
-// TODO: Add error message for user signout and delete on account view
-// TODO: Create resetPassword()
 
 import Foundation
 import Firebase
 import FirebaseFirestoreSwift
+import UIKit
 
 // Defines protocol for validating authentication forms
 protocol AuthenticationFormProtocol {
@@ -22,29 +20,27 @@ class AuthViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User? //Stores whether a user is logged in
     @Published var currentUser: User? // Stores current users details
     @Published var errorMessage: String?
-    @Published var preferencesModel: UserPreferencesModel?
+    //Published var preferencesModel: UserPreferencesModel?
     
     // Initialises the view model by checking if a user is currently logged in
     init(){
-        self.userSession = Auth.auth().currentUser
-        if let user = userSession {
-                    self.preferencesModel = UserPreferencesModel(userId: user.uid)
-                }
-        Task {
-            await fetchUser() // Fetches user data if they are logged in
+            self.userSession = Auth.auth().currentUser
+
+            Task {
+                await fetchUser()
+            }
         }
-    }
-    
+    /*
     func setupPreferencesModel(userId: String) {
             self.preferencesModel = UserPreferencesModel(userId: userId)
-        }
+        }*/
     
     // Attempts to sign user in using user input and set current session
     func signIn(withEmail email: String, password: String) async throws {
         do {
             let result = try await Auth.auth().signIn(withEmail: email, password: password)
             self.userSession = result.user
-            self.preferencesModel = UserPreferencesModel(userId: result.user.uid)
+            //self.preferencesModel = UserPreferencesModel(userId: result.user.uid) //Remove
             await fetchUser()
             errorMessage = nil // No error occured, so error message is empty
         } catch {
@@ -60,7 +56,7 @@ class AuthViewModel: ObservableObject {
             self.userSession = result.user
             let user = User(id: result.user.uid, fullname: fullname, email: email,
                             isDarkMode: false, chosenLanguage: "en-US")
-            self.preferencesModel = UserPreferencesModel(userId: result.user.uid)
+            //self.preferencesModel = UserPreferencesModel(userId: result.user.uid) //Remove
             let encodedUser = try Firestore.Encoder().encode(user) // Converts user details into form firebase can handle
             try await Firestore.firestore().collection("users").document(user.id).setData(encodedUser)
             await fetchUser()
@@ -117,4 +113,33 @@ class AuthViewModel: ObservableObject {
             print("DEBUG: Current user is nil")
         }
     }
+    
+    func updateUserPreferences(isDarkMode: Bool, chosenLanguage: String) async throws {
+        guard let userSession = self.userSession else {
+            print("DEBUG: No user session found")
+            return
+        }
+        
+        var updatedUser = self.currentUser ?? User(id: userSession.uid, fullname: "", email: "", isDarkMode: false, chosenLanguage: "en-US")
+        updatedUser.isDarkMode = isDarkMode
+        updatedUser.chosenLanguage = chosenLanguage
+        
+        let userRef = Firestore.firestore().collection("users").document(userSession.uid)
+        do {
+            try await userRef.setData(try Firestore.Encoder().encode(updatedUser))
+            self.currentUser = updatedUser
+            print("DEBUG: Successfully updated user preferences")
+        } catch {
+            print("DEBUG: Error updating user preferences: \(error.localizedDescription)")
+            throw error
+        }
+    }
+    
+    private func applyTheme() {
+            DispatchQueue.main.async { [weak self] in
+                if let isDarkMode = self?.currentUser?.isDarkMode {
+                    UIApplication.shared.windows.first?.overrideUserInterfaceStyle = isDarkMode ? .dark : .light
+                }
+            }
+        }
 }
