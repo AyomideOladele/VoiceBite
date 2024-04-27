@@ -7,15 +7,14 @@
 import SwiftUI
 
 struct SettingsView: View {
-    
-    @State private var isDarkMode: Bool = false
+    @AppStorage("isDarkMode") private var isDarkMode: Bool = false
     @State private var chosenLanguage: String = "en-US"
     @EnvironmentObject var viewModel: AuthViewModel
        
     let languages = ["en-GB", "en-US", "en-AU"]
     
     var body: some View {
-        NavigationView{
+        //NavigationView{
             VStack{
                 
                 Text("SETTINGS")
@@ -34,15 +33,15 @@ struct SettingsView: View {
                                 Text($0)
                             }
                         }.pickerStyle(.menu)
-                        .onChange(of: chosenLanguage) { newLanguage in
-                            Task {
-                                do {
-                                    try await viewModel.updateUserPreferences(isDarkMode: isDarkMode, chosenLanguage: newLanguage)
-                                } catch {
-                                    print("Error updating user preferences: \(error.localizedDescription)")
+                            .onChange(of: chosenLanguage) { newLanguage in
+                                Task {
+                                    do {
+                                        try await viewModel.updateUserPreferences(isDarkMode: isDarkMode, chosenLanguage: newLanguage)
+                                    } catch {
+                                        print("Error updating user preferences: \(error.localizedDescription)")
+                                    }
                                 }
                             }
-                        }
                     }
                     
                     HStack{
@@ -59,15 +58,34 @@ struct SettingsView: View {
                             }
                         }
                     }
+                    
+                    HStack{
+                        SettingsBox(imageName: "questionmark.app", label: "Tutorial", iconColour: .secondary)
+                        Spacer()
+                        
+                        NavigationLink {
+                            TutorialView()
+                        } label: {
+                            Text("Check Voice Cmds")
+                                .padding(.vertical, 10.0)
+                                .padding(.horizontal, 10.0)
+                                .font(.system(size: 15, weight: .bold))
+                            
+                        }.foregroundColor(Color("ButtonTextColor"))
+                            .background(Color("AccentColor"))
+                            .cornerRadius(15)
+                            .frame(width: 190)
+                    }
                 }
-            }.onAppear {
+            }//.padding(.top, -50)
+            .onAppear {
                 if let user = viewModel.currentUser {
                     isDarkMode = user.isDarkMode
                     chosenLanguage = user.chosenLanguage
                 }
             }
         }
-    }
+   // }
 }
 
 struct SettingsScreenView_Previews: PreviewProvider {

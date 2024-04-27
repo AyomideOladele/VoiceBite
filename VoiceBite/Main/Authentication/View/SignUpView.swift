@@ -4,7 +4,6 @@
 //
 // A view for user registration
 //
-// TODO: Add screen shake for when login details are incorrect
 
 import SwiftUI
 
@@ -122,11 +121,15 @@ struct SignUpView: View {
 // If user data entry is valid, returns true
 extension SignUpView: AuthenticationFormProtocol {
     var formIsValid: Bool {
+        // Define the regex pattern to check the email format
+        let emailRegex = "^[^@]+@[A-Za-z]+\\.[A-Za-z]{2,}$"
+        let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
+        let emailFormatValid = emailPredicate.evaluate(with: email)
         
-        let emailFormatValid = email.contains("@") && email.contains(".")
+        //let emailFormatValid = email.contains("@") && email.contains(".")
         let passwordHasNumber = password.rangeOfCharacter(from: .decimalDigits) != nil
         let passwordHasCapitalLetter = password.rangeOfCharacter(from: .uppercaseLetters) != nil
-        let passwordLengthValid = password.count > 8
+        let passwordLengthValid = password.count >= 8
         
         return !email.isEmpty
         && emailFormatValid

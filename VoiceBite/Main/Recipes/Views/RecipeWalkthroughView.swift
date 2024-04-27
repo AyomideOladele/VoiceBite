@@ -18,10 +18,8 @@ struct RecipeWalkthroughView: View {
     @State private var chosenLanguage = "en-US"
     @StateObject private var speechRecognizer = SpeechRecognizer()
     @EnvironmentObject var viewModel: AuthViewModel
-    //@EnvironmentObject private var appSettingsModel: AppSettingsModel
     
     var body: some View {
-            
         VStack {
             TabView(selection: $currentTab) {
                 ForEach(recipe.instructions.indices, id: \.self) { index in
@@ -44,15 +42,13 @@ struct RecipeWalkthroughView: View {
                         
                         ForEach(recipe.instructions[index].details, id: \.self) { detail in
                             Text(detail)
-                                .font(.system(size: 14))
+                                .font(.system(size: 17))
                                 .foregroundColor(Color("TextColor"))
                                 .padding(.horizontal, 20)
                                 .padding(.vertical, 10)
                                 .frame(alignment: .center)
                                 .multilineTextAlignment(.center)
                         }
-                        
-                        
                        
                         Image(systemName: "mic.circle.fill")
                             .font(.system(size: 100))
@@ -92,7 +88,7 @@ struct RecipeWalkthroughView: View {
             
             // Process the last word of the command
             switch String(lastWord) {
-            case "next", "continue":
+            case "next":
                 if currentTab < recipe.instructions.count - 1 {
                     currentTab += 1
                     print("DEBUG: Next command recognised and executed, tab changed to \(currentTab).")
@@ -102,11 +98,11 @@ struct RecipeWalkthroughView: View {
                     currentTab -= 1
                     print("DEBUG: Previous command recognised and executed, tab changed to \(currentTab).")
                 }
-            case "repeat", "again":
+            case "repeat":
                 speakCurrentInstruction()
                 print("DEBUG: Repeat command recognised and executed, instruction on tab \(currentTab) repeated.")
                 
-            case "exit", "end", "finish":
+            case "finish":
                 dismiss()
                 print("DEBUG: exit command recognised and executed, view dismissed")
             
@@ -124,29 +120,25 @@ struct RecipeWalkthroughView: View {
     
     
     private func speakCurrentInstruction() {
+        
         print("DEBUG: Instruction called to speak on tab \(currentTab)")
-        setTTSLanguage ()
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             let instruction = recipe.instructions[currentTab].description
             let utterance = AVSpeechUtterance(string: instruction)
-            utterance.voice = AVSpeechSynthesisVoice(language: "cs")
+            utterance.voice = AVSpeechSynthesisVoice(language: chosenLanguage)
             synthesizer.speak(utterance)
-        
-            let details = recipe.instructions[currentTab].details
-            
-            for detail in details {
-                let utterance = AVSpeechUtterance(string: detail)
-                synthesizer.speak(utterance)
-            }
         }
-        
     }
-    
 }
 
 struct RecipeWalkthroughView_Previews: PreviewProvider {
     static var previews: some View {
+        
         let manager = RecipeManager()
+        
         RecipeWalkthroughView(recipe: manager.recipes[0])
     }
 }
+
+

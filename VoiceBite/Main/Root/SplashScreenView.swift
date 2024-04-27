@@ -33,7 +33,6 @@ struct SplashScreenView: View {
                 .scaleEffect(size)
                 .opacity(opacity)
                 .onAppear {
-                    // Development Note: Turn into pulsating animation
                     withAnimation(.easeIn(duration: 1.2)) {
                         self.size = 0.7
                         self.opacity = 1.0

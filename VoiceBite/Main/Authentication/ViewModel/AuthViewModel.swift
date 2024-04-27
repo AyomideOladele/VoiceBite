@@ -20,7 +20,6 @@ class AuthViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User? //Stores whether a user is logged in
     @Published var currentUser: User? // Stores current users details
     @Published var errorMessage: String?
-    //Published var preferencesModel: UserPreferencesModel?
     
     // Initialises the view model by checking if a user is currently logged in
     init(){
@@ -30,17 +29,12 @@ class AuthViewModel: ObservableObject {
                 await fetchUser()
             }
         }
-    /*
-    func setupPreferencesModel(userId: String) {
-            self.preferencesModel = UserPreferencesModel(userId: userId)
-        }*/
     
     // Attempts to sign user in using user input and set current session
     func signIn(withEmail email: String, password: String) async throws {
         do {
             let result = try await Auth.auth().signIn(withEmail: email, password: password)
             self.userSession = result.user
-            //self.preferencesModel = UserPreferencesModel(userId: result.user.uid) //Remove
             await fetchUser()
             errorMessage = nil // No error occured, so error message is empty
         } catch {
@@ -56,7 +50,6 @@ class AuthViewModel: ObservableObject {
             self.userSession = result.user
             let user = User(id: result.user.uid, fullname: fullname, email: email,
                             isDarkMode: false, chosenLanguage: "en-US")
-            //self.preferencesModel = UserPreferencesModel(userId: result.user.uid) //Remove
             let encodedUser = try Firestore.Encoder().encode(user) // Converts user details into form firebase can handle
             try await Firestore.firestore().collection("users").document(user.id).setData(encodedUser)
             await fetchUser()
@@ -106,7 +99,6 @@ class AuthViewModel: ObservableObject {
         
         guard let snapshot = try? await Firestore.firestore().collection("users").document(uid).getDocument() else {return}
         self.currentUser = try? snapshot.data(as: User.self)
-        
         if let user = self.currentUser {
             print("DEBUG: Current user is \(user)")
         } else {
@@ -134,12 +126,4 @@ class AuthViewModel: ObservableObject {
             throw error
         }
     }
-    
-    private func applyTheme() {
-            DispatchQueue.main.async { [weak self] in
-                if let isDarkMode = self?.currentUser?.isDarkMode {
-                    UIApplication.shared.windows.first?.overrideUserInterfaceStyle = isDarkMode ? .dark : .light
-                }
-            }
-        }
 }

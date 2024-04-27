@@ -13,7 +13,7 @@ import Firebase
 struct VoiceBiteApp: App {
     
     @StateObject var viewModel = AuthViewModel() // Authentication model for VoiceBite, used across the appliation
-    //@StateObject private var appSettingsModel = AppSettingsModel(isDarkMode: false)
+    @AppStorage("isDarkMode") private var isDarkMode = false
     
     init(){
         FirebaseApp.configure()
@@ -22,11 +22,9 @@ struct VoiceBiteApp: App {
     // Configures and displays the first view of the app
     var body: some Scene {
         WindowGroup {
-            //LoginView()
             SplashScreenView()
                 .environmentObject(viewModel) // Passes authentication model to first view
-                //.environmentObject(viewModel.preferencesModel!)
-                //.environmentObject(appSettingsModel)
+                .preferredColorScheme(isDarkMode ? .dark : .light)
         }
     }
 }
