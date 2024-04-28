@@ -2,12 +2,12 @@
 //  SplashScreenView.swift
 //  VoiceBite
 //
-//  Created by Ayomide Oladele on 19/02/2024.
-//
+// A view displaying a short animation of the VoiceBite logo before triggering the content view to load
 
 import SwiftUI
 
 struct SplashScreenView: View {
+    
     @EnvironmentObject var viewModel: AuthViewModel
     @State private var isActive = false;
     @State private var size = 0.5
@@ -15,7 +15,19 @@ struct SplashScreenView: View {
     var body: some View {
         
         if isActive {
-            ContentView().environmentObject(viewModel)
+            
+            // Displays recipe search if user is logged in
+            if viewModel.userSession != nil {
+                
+                RecipesDirectoryView(recipeManager: RecipeManager())
+                
+            // Otherwise, displays login screen
+            } else {
+                
+                LoginView()
+                
+            }
+            
         } else {
             VStack{
                 VStack{

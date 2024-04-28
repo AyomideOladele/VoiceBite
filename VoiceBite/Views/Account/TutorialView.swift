@@ -2,6 +2,7 @@
 //  TutorialView.swift
 //  VoiceBite
 //
+// A view displaying the available voice commands
 
 import SwiftUI
 
@@ -55,9 +56,7 @@ struct TutorialView: View {
                 Text("Finish")
                     .foregroundColor(Color("TextColor"))
                 
-            }//.padding(.top, -200)
-       //}.navigationBarTitle("Tutorial", displayMode: .inline)
-        //.navigationBarHidden(true)
+            }
     }
 }
 

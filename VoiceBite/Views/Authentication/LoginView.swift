@@ -3,8 +3,6 @@
 // VoiceBite
 //
 // A view for user login
-//
-// TODO: Current error message for invalid login is non specific, add specifc error message for wrong password, wrong email, and screen shake for when login details are incorrect
 
 import SwiftUI
 

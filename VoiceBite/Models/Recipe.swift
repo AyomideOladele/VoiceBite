@@ -2,8 +2,8 @@
 //  Recipe.swift
 //  VoiceBite
 //
-// A simple data model for a recipe
-//
+// A model for a recipe
+
 import Foundation
 
 struct Recipe: Identifiable, Codable{
@@ -32,6 +32,7 @@ struct Recipe: Identifiable, Codable{
     var recipeMetrics: [Metric]
 }
 
+// Database of recipes
 class RecipeManager: ObservableObject {
     
     @Published var recipes: [Recipe] = [
@@ -41,7 +42,7 @@ class RecipeManager: ObservableObject {
             Recipe.Instruction(description: "Prepare Pesto", details: ["a) Put basil, pine nuts, garlic and 3/4 of the parmesean into food processor and pulse until finely chopped", "b) While the food processor is running, slowly combine olive oil until fully combined", "c) Continue pulsing until mixture is smooth"], imageName: "MixingPesto"),
             Recipe.Instruction(description: "Cook Pasta", details: ["a) Fill pot with water, add a pinch of salt and bring to boil", "b) Add pasta and cook for 10 to 12 minutes until al dente", "c) Once cooked, drain pasta and reserve 250ml of pasta water"], imageName: "BoilingPotWater"),
             Recipe.Instruction(description: "Combine Pesto and Pasta", details: ["a) Return the pasta to the pot", "b) Add pasta water and pesto to pot and mix well"], imageName: "PestoPasta"),
-            Recipe.Instruction(description: "Recipe Complete!", details: ["a) Serve pasta into two bowls, add parmesean cheese and black pepper to taste"], imageName: "PestoPasta")],
+            Recipe.Instruction(description: "Recipe Complete!", details: ["Serve pasta into two bowls, add parmesean cheese and black pepper to taste"], imageName: "PestoPasta")],
             recipeMetrics: [
             Recipe.Metric(detail: "15 mins", label: "Preperation Time"),
             Recipe.Metric(detail: "500 kcal", label: "Calories Per Serving"),

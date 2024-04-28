@@ -24,14 +24,9 @@
 		770C98B22BD2CA6600BFADE8 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C98AE2BD2B0EE00BFADE8 /* SpeechRecognizer.swift */; };
 		773F69BA2BDD1D1E0049F4F7 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773F69B92BDD1D1D0049F4F7 /* TutorialView.swift */; };
 		77B39A6A2B83B97200C31A99 /* VoiceBiteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A692B83B97200C31A99 /* VoiceBiteApp.swift */; };
-		77B39A6C2B83B97200C31A99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A6B2B83B97200C31A99 /* ContentView.swift */; };
 		77B39A6E2B83B97300C31A99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77B39A6D2B83B97300C31A99 /* Assets.xcassets */; };
 		77B39A712B83B97300C31A99 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77B39A702B83B97300C31A99 /* Preview Assets.xcassets */; };
-		77B39A732B83B97300C31A99 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A722B83B97300C31A99 /* Persistence.swift */; };
 		77B39A762B83B97300C31A99 /* VoiceBite.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A742B83B97300C31A99 /* VoiceBite.xcdatamodeld */; };
-		77B39A802B83B97400C31A99 /* VoiceBiteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A7F2B83B97400C31A99 /* VoiceBiteTests.swift */; };
-		77B39A8A2B83B97400C31A99 /* VoiceBiteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A892B83B97400C31A99 /* VoiceBiteUITests.swift */; };
-		77B39A8C2B83B97400C31A99 /* VoiceBiteUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A8B2B83B97400C31A99 /* VoiceBiteUITestsLaunchTests.swift */; };
 		77B39A9B2B840FEC00C31A99 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A9A2B840FEC00C31A99 /* SplashScreenView.swift */; };
 		77B39A9D2B84105600C31A99 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39A9C2B84105600C31A99 /* LoginView.swift */; };
 		77B39AA72B84188300C31A99 /* InputBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B39AA62B84188300C31A99 /* InputBox.swift */; };
@@ -71,16 +66,11 @@
 		773F69B92BDD1D1D0049F4F7 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		77B39A662B83B97200C31A99 /* VoiceBite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceBite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77B39A692B83B97200C31A99 /* VoiceBiteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceBiteApp.swift; sourceTree = "<group>"; };
-		77B39A6B2B83B97200C31A99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		77B39A6D2B83B97300C31A99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77B39A702B83B97300C31A99 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		77B39A722B83B97300C31A99 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		77B39A752B83B97300C31A99 /* VoiceBite.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VoiceBite.xcdatamodel; sourceTree = "<group>"; };
 		77B39A7B2B83B97400C31A99 /* VoiceBiteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoiceBiteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		77B39A7F2B83B97400C31A99 /* VoiceBiteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceBiteTests.swift; sourceTree = "<group>"; };
 		77B39A852B83B97400C31A99 /* VoiceBiteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoiceBiteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		77B39A892B83B97400C31A99 /* VoiceBiteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceBiteUITests.swift; sourceTree = "<group>"; };
-		77B39A8B2B83B97400C31A99 /* VoiceBiteUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceBiteUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		77B39A9A2B840FEC00C31A99 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		77B39A9C2B84105600C31A99 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		77B39AA62B84188300C31A99 /* InputBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputBox.swift; sourceTree = "<group>"; };
@@ -117,16 +107,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		770C98852BBF35BF00BFADE8 /* View */ = {
+		770C988E2BCDF81400BFADE8 /* Recipes */ = {
 			isa = PBXGroup;
 			children = (
-				77B39AA82B8427DB00C31A99 /* SignUpView.swift */,
-				77B39A9C2B84105600C31A99 /* LoginView.swift */,
+				770C98892BCD4D0C00BFADE8 /* RecipesDirectoryView.swift */,
+				770C98952BCE9C1700BFADE8 /* RecipeDetailsView.swift */,
+				770C98972BCFFF2300BFADE8 /* RecipeWalkthroughView.swift */,
 			);
-			path = View;
+			path = Recipes;
 			sourceTree = "<group>";
 		};
-		770C98862BBF35D000BFADE8 /* ViewModel */ = {
+		779C99FF2BDDE434005F584E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				770C988C2BCD929000BFADE8 /* Recipe.swift */,
+				770C98AE2BD2B0EE00BFADE8 /* SpeechRecognizer.swift */,
+				770C98782BBF28B800BFADE8 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		779C9A002BDE4306005F584E /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				77B39A9A2B840FEC00C31A99 /* SplashScreenView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		779C9A032BDE4AB8005F584E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				770C98872BBF364C00BFADE8 /* AuthViewModel.swift */,
@@ -134,58 +143,10 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		770C988E2BCDF81400BFADE8 /* Recipes */ = {
-			isa = PBXGroup;
-			children = (
-				770C988F2BCDF84E00BFADE8 /* Views */,
-				770C98902BCDF86C00BFADE8 /* ViewModel */,
-			);
-			path = Recipes;
-			sourceTree = "<group>";
-		};
-		770C988F2BCDF84E00BFADE8 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				770C98892BCD4D0C00BFADE8 /* RecipesDirectoryView.swift */,
-				770C98952BCE9C1700BFADE8 /* RecipeDetailsView.swift */,
-				770C98972BCFFF2300BFADE8 /* RecipeWalkthroughView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		770C98902BCDF86C00BFADE8 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				770C98AE2BD2B0EE00BFADE8 /* SpeechRecognizer.swift */,
-				770C988C2BCD929000BFADE8 /* Recipe.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		770C98912BCDF89300BFADE8 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				770C98782BBF28B800BFADE8 /* User.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		770C98922BCDF8A100BFADE8 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				770C98742BBD888900BFADE8 /* AccountView.swift */,
-				77B39AAA2B842C4200C31A99 /* SettingsView.swift */,
-				773F69B92BDD1D1D0049F4F7 /* TutorialView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		77B39A5D2B83B97200C31A99 = {
 			isa = PBXGroup;
 			children = (
 				77B39A682B83B97200C31A99 /* VoiceBite */,
-				77B39A7E2B83B97400C31A99 /* VoiceBiteTests */,
-				77B39A882B83B97400C31A99 /* VoiceBiteUITests */,
 				77B39A672B83B97200C31A99 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -205,10 +166,11 @@
 			children = (
 				77B39A692B83B97200C31A99 /* VoiceBiteApp.swift */,
 				77B39AA22B84141300C31A99 /* Components */,
-				77B39A9F2B8412A000C31A99 /* Main */,
+				77B39A9F2B8412A000C31A99 /* Views */,
+				779C9A032BDE4AB8005F584E /* ViewModel */,
+				779C99FF2BDDE434005F584E /* Models */,
 				77B39A6D2B83B97300C31A99 /* Assets.xcassets */,
 				770C987A2BBF340000BFADE8 /* GoogleService-Info.plist */,
-				77B39A722B83B97300C31A99 /* Persistence.swift */,
 				77B39A742B83B97300C31A99 /* VoiceBite.xcdatamodeld */,
 				77B39A6F2B83B97300C31A99 /* Preview Content */,
 			);
@@ -223,41 +185,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		77B39A7E2B83B97400C31A99 /* VoiceBiteTests */ = {
+		77B39A9F2B8412A000C31A99 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				77B39A7F2B83B97400C31A99 /* VoiceBiteTests.swift */,
-			);
-			path = VoiceBiteTests;
-			sourceTree = "<group>";
-		};
-		77B39A882B83B97400C31A99 /* VoiceBiteUITests */ = {
-			isa = PBXGroup;
-			children = (
-				77B39A892B83B97400C31A99 /* VoiceBiteUITests.swift */,
-				77B39A8B2B83B97400C31A99 /* VoiceBiteUITestsLaunchTests.swift */,
-			);
-			path = VoiceBiteUITests;
-			sourceTree = "<group>";
-		};
-		77B39A9F2B8412A000C31A99 /* Main */ = {
-			isa = PBXGroup;
-			children = (
+				779C9A002BDE4306005F584E /* Root */,
 				77B39AA42B84155C00C31A99 /* Authentication */,
-				77B39AA52B84156500C31A99 /* Profile */,
+				77B39AA52B84156500C31A99 /* Account */,
 				770C988E2BCDF81400BFADE8 /* Recipes */,
-				77B39AA02B8412AE00C31A99 /* Root */,
 			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		77B39AA02B8412AE00C31A99 /* Root */ = {
-			isa = PBXGroup;
-			children = (
-				77B39A6B2B83B97200C31A99 /* ContentView.swift */,
-				77B39A9A2B840FEC00C31A99 /* SplashScreenView.swift */,
-			);
-			path = Root;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		77B39AA22B84141300C31A99 /* Components */ = {
@@ -273,19 +209,20 @@
 		77B39AA42B84155C00C31A99 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				770C98852BBF35BF00BFADE8 /* View */,
-				770C98862BBF35D000BFADE8 /* ViewModel */,
+				77B39AA82B8427DB00C31A99 /* SignUpView.swift */,
+				77B39A9C2B84105600C31A99 /* LoginView.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
 		};
-		77B39AA52B84156500C31A99 /* Profile */ = {
+		77B39AA52B84156500C31A99 /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				770C98922BCDF8A100BFADE8 /* Views */,
-				770C98912BCDF89300BFADE8 /* ViewModels */,
+				770C98742BBD888900BFADE8 /* AccountView.swift */,
+				77B39AAA2B842C4200C31A99 /* SettingsView.swift */,
+				773F69B92BDD1D1D0049F4F7 /* TutorialView.swift */,
 			);
-			path = Profile;
+			path = Account;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -432,7 +369,6 @@
 				77B39AA92B8427DB00C31A99 /* SignUpView.swift in Sources */,
 				770C98982BCFFF2300BFADE8 /* RecipeWalkthroughView.swift in Sources */,
 				77B39A762B83B97300C31A99 /* VoiceBite.xcdatamodeld in Sources */,
-				77B39A732B83B97300C31A99 /* Persistence.swift in Sources */,
 				77B39A9D2B84105600C31A99 /* LoginView.swift in Sources */,
 				770C988D2BCD929000BFADE8 /* Recipe.swift in Sources */,
 				770C98882BBF364C00BFADE8 /* AuthViewModel.swift in Sources */,
@@ -440,7 +376,6 @@
 				770C98792BBF28B800BFADE8 /* User.swift in Sources */,
 				770C98B22BD2CA6600BFADE8 /* SpeechRecognizer.swift in Sources */,
 				77B39AAB2B842C4200C31A99 /* SettingsView.swift in Sources */,
-				77B39A6C2B83B97200C31A99 /* ContentView.swift in Sources */,
 				770C98942BCDFC6C00BFADE8 /* RecipeCard.swift in Sources */,
 				770C98772BBF01BA00BFADE8 /* SettingsBox.swift in Sources */,
 				77B39AA72B84188300C31A99 /* InputBox.swift in Sources */,
@@ -455,7 +390,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77B39A802B83B97400C31A99 /* VoiceBiteTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,8 +397,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77B39A8A2B83B97400C31A99 /* VoiceBiteUITests.swift in Sources */,
-				77B39A8C2B83B97400C31A99 /* VoiceBiteUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

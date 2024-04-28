@@ -80,6 +80,8 @@ struct RecipeWalkthroughView: View {
     
     
     private func handleCommand(_ command: String?) {
+        
+        // Cleans command of unnecessary characters, returns if empty
         guard let command = command?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased(), !command.isEmpty else { return }
 
         // Split the command string into words
@@ -96,7 +98,7 @@ struct RecipeWalkthroughView: View {
             case "previous", "back":
                 if currentTab > 0 {
                     currentTab -= 1
-                    print("DEBUG: Previous command recognised and executed, tab changed to \(currentTab).")
+                    print("DEBUG: Previous/Back command recognised and executed, tab changed to \(currentTab).")
                 }
             case "repeat":
                 speakCurrentInstruction()
@@ -104,7 +106,7 @@ struct RecipeWalkthroughView: View {
                 
             case "finish":
                 dismiss()
-                print("DEBUG: exit command recognised and executed, view dismissed")
+                print("DEBUG: Exit command recognised and executed, view dismissed")
             
             default:
                 print("DEBUG: Command \(command) not recognized.")

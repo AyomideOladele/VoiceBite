@@ -2,8 +2,7 @@
 //  RecipesSearchView.swift
 //  VoiceBite
 //
-//  A view displaying all recipes in Recipe Manager in a grid view
-//
+//  A view displaying all recipes in Recipe Manager in a grid view - all recipe (when selected) display a recipe details view
 
 import SwiftUI
 

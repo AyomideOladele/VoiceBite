@@ -3,7 +3,6 @@
 //  VoiceBite
 //
 // A view displaying users account information, including options to sign out and delete account
-//
 
 import SwiftUI
 

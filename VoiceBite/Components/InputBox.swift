@@ -2,9 +2,7 @@
 //  InputBox.swift
 //  VoiceBite
 //
-// A view component of a reusable user input textbox, that creates either a `TextField` or a `SecureField` based on configuration
-//
-// TODO: Include toggle for displaying password
+// A view component of a user input textbox, that creates either a `TextField` or a `SecureField` based on configuration
 
 import SwiftUI
 
@@ -36,7 +34,7 @@ struct InputBox: View {
     
     struct InputBox_Previews: PreviewProvider {
         static var previews: some View {
-            InputBox(text: .constant(""), placeholder: "placeholder") // '.constant("")' provides an unchangable value to fufill @Binding's requirements
+            InputBox(text: .constant(""), placeholder: "placeholder")
         }
     }
 }

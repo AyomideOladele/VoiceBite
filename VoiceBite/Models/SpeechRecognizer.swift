@@ -2,7 +2,7 @@
 //  SpeechRecognizer.swift
 //  VoiceBite
 //
-// A class for recognising speech during recipe walkthroughs, and handling voice commands.
+// A model for recognising speech during recipe walkthroughs and handling voice commands.
 
 import Foundation
 import AVFoundation

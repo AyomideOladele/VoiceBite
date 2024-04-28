@@ -2,8 +2,7 @@
 //  SettingsBoxView.swift
 //  VoiceBite
 //
-// A view component for a reusable settings box, with a label and icon
-//
+// A view component for a settings box, with a label and icon
 
 import SwiftUI
 

@@ -2,8 +2,7 @@
 //  RecipeDetailsView.swift
 //  VoiceBite
 //
-// A view displays recipe details as a full cover screen - start button begins recipe walkthrough
-//
+// A view displaying recipe details as a full cover screen - start button begins recipe walkthrough
 
 import SwiftUI
 

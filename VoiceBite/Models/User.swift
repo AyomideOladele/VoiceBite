@@ -2,7 +2,7 @@
 //  User.swift
 //  VoiceBite
 //
-// A simple data model for a user, defines properties: id, fullname and email.
+// A model for a user, defines properties: id, fullname and email.
 
 import Foundation
 

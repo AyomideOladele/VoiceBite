@@ -2,7 +2,7 @@
 //  RecipeCard.swift
 //  VoiceBite
 //
-// A reusuable view component for recipes on the directory view. Formats recipe image into a rounded and displays title + background banner as an overlay.
+// A view component for recipes on the directory view - formats recipe image into a rounded and displays title + background banner as an overlay.
 
 import SwiftUI
 

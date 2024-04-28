@@ -2,7 +2,7 @@
 //  AuthViewModel.swift
 //  VoiceBite
 //
-// Manages the authentication state of the user
+// A viewmodel for managing the authentication state of the user and user preferences
 
 import Foundation
 import Firebase

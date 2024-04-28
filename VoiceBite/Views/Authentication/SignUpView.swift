@@ -3,7 +3,6 @@
 //  VoiceBite
 //
 // A view for user registration
-//
 
 import SwiftUI
 
