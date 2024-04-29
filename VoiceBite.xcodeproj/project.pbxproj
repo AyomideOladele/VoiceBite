@@ -110,8 +110,8 @@
 		770C988E2BCDF81400BFADE8 /* Recipes */ = {
 			isa = PBXGroup;
 			children = (
-				770C98892BCD4D0C00BFADE8 /* RecipesDirectoryView.swift */,
 				770C98952BCE9C1700BFADE8 /* RecipeDetailsView.swift */,
+				770C98892BCD4D0C00BFADE8 /* RecipesDirectoryView.swift */,
 				770C98972BCFFF2300BFADE8 /* RecipeWalkthroughView.swift */,
 			);
 			path = Recipes;
@@ -120,6 +120,7 @@
 		779C99FF2BDDE434005F584E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				770C98872BBF364C00BFADE8 /* AuthViewModel.swift */,
 				770C988C2BCD929000BFADE8 /* Recipe.swift */,
 				770C98AE2BD2B0EE00BFADE8 /* SpeechRecognizer.swift */,
 				770C98782BBF28B800BFADE8 /* User.swift */,
@@ -133,14 +134,6 @@
 				77B39A9A2B840FEC00C31A99 /* SplashScreenView.swift */,
 			);
 			path = Root;
-			sourceTree = "<group>";
-		};
-		779C9A032BDE4AB8005F584E /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				770C98872BBF364C00BFADE8 /* AuthViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		77B39A5D2B83B97200C31A99 = {
@@ -167,7 +160,6 @@
 				77B39A692B83B97200C31A99 /* VoiceBiteApp.swift */,
 				77B39AA22B84141300C31A99 /* Components */,
 				77B39A9F2B8412A000C31A99 /* Views */,
-				779C9A032BDE4AB8005F584E /* ViewModel */,
 				779C99FF2BDDE434005F584E /* Models */,
 				77B39A6D2B83B97300C31A99 /* Assets.xcassets */,
 				770C987A2BBF340000BFADE8 /* GoogleService-Info.plist */,
@@ -188,9 +180,9 @@
 		77B39A9F2B8412A000C31A99 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				779C9A002BDE4306005F584E /* Root */,
-				77B39AA42B84155C00C31A99 /* Authentication */,
 				77B39AA52B84156500C31A99 /* Account */,
+				77B39AA42B84155C00C31A99 /* Authentication */,
+				779C9A002BDE4306005F584E /* Root */,
 				770C988E2BCDF81400BFADE8 /* Recipes */,
 			);
 			path = Views;
@@ -200,8 +192,8 @@
 			isa = PBXGroup;
 			children = (
 				77B39AA62B84188300C31A99 /* InputBox.swift */,
-				770C98762BBF01BA00BFADE8 /* SettingsBox.swift */,
 				770C98932BCDFC6C00BFADE8 /* RecipeCard.swift */,
+				770C98762BBF01BA00BFADE8 /* SettingsBox.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -209,8 +201,8 @@
 		77B39AA42B84155C00C31A99 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				77B39AA82B8427DB00C31A99 /* SignUpView.swift */,
 				77B39A9C2B84105600C31A99 /* LoginView.swift */,
+				77B39AA82B8427DB00C31A99 /* SignUpView.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";

@@ -13,49 +13,68 @@ struct AccountView: View {
     
     var body: some View {
         
+        // Displays view only if there is a user currently logged in
         if let user = viewModel.currentUser {
-            NavigationView{
                 VStack{
+                    
+                    // Displays my account heading
                     Text("MY ACCOUNT")
                         .fontWeight(.bold)
                         .foregroundColor(Color("AccentColor"))
                         .padding(.vertical, 5.0)
                         .font(.title)
                     
+                    // Displays welcome back text with current users full name
                     Text("Welcome Back, " + user.fullname)
                         .foregroundColor(Color("TextColor").opacity(0.8))
                         .font(.body)
+                        .padding(.bottom, 20.0)
                     
                     List {
                         Section("Details"){
-                            
-                            // Displays app version
-                            HStack{
-                                SettingsBox(imageName: "gear", label: "Version", iconColour: .secondary)
-                                Spacer()
-                                Text("1.0.0")
-                            }.accessibilityLabel("Version 1.0.0")
                             
                             // Displays user's email
                             SettingsBox(imageName: "mail", label: user.email, iconColour: .secondary)
                                 .accessibilityLabel("Email: \(user.email)")
                         }
                         
+                        Section("Help"){
+                            
+                            // Navigates user to tutorial if clicked
+                            HStack{
+                                SettingsBox(imageName: "questionmark.app", label: "Tutorial", iconColour: .secondary)
+                                Spacer()
+                                NavigationLink {
+                                    TutorialView()
+                                        
+                                } label: {
+                                    Text("Go")
+                                        .padding(.vertical, 7.0)
+                                        .padding(.horizontal, 7.0)
+                                        .font(.system(size: 15, weight: .bold))
+                                    
+                                }.foregroundColor(Color("ButtonTextColor"))
+                                    .background(Color("AccentColor"))
+                                    .cornerRadius(15)
+                                    .frame(width: 70, height: 10)
+                            }
+                        }
+                        
                         Section("Account"){
                             
-                            // Sign Out Button
+                            // Sign out button
                             Button {
                                 viewModel.signOut()
                             } label: {
-                                SettingsBox(imageName: "arrow.left.circle.fill", label: "Sign Out", iconColour: .red)
+                                SettingsBox(imageName: "arrow.left.circle", label: "Sign Out", iconColour: Color("AccentColor"))
                             }
                             .accessibilityLabel("Sign Out")
                             
-                            // Delete Account Button
+                            // Delete account button
                             Button {
                                 showingAlert = true
                             } label: {
-                                SettingsBox(imageName: "xmark.circle.fill", label: "Delete Account", iconColour: .red)
+                                SettingsBox(imageName: "xmark.circle", label: "Delete Account", iconColour: Color("AccentColor"))
                             }
                             .accessibilityLabel("Delete Account")
                             // Displays alert to confirm account deletion
@@ -66,7 +85,7 @@ struct AccountView: View {
                                     primaryButton: .cancel(),
                                     secondaryButton: .destructive(Text("Delete"), action: {
                                         Task {
-                                            await viewModel.deleteAccount()
+                                            await viewModel.deleteAccount() // Attempts to delete account
                                         }
                                     })
                                 )
@@ -74,7 +93,6 @@ struct AccountView: View {
                         }
                     }
                 }
-            }
         }
     }
 }

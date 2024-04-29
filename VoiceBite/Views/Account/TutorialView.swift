@@ -9,7 +9,6 @@ import SwiftUI
 struct TutorialView: View {
     var body: some View {
             VStack{
-                
                 Text("VOICE COMMANDS")
                     .fontWeight(.bold)
                     .foregroundColor(Color("AccentColor"))
@@ -52,10 +51,9 @@ struct TutorialView: View {
                     .foregroundColor(Color("TextColor"))
                     .padding(.vertical, 5.0)
                     .font(.headline)
-
+                
                 Text("Finish")
                     .foregroundColor(Color("TextColor"))
-                
             }
     }
 }

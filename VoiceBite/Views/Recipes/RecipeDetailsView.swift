@@ -16,10 +16,12 @@ struct RecipeDetailsView: View {
             ScrollView{
                 VStack{
                     
+                    // Displays recipe title
                     Text(recipe.title)
                         .font(.title)
                         .bold()
                     
+                    // Displays recipe image
                     VStack{
                         Image(recipe.imageName)
                             .resizable()
@@ -30,9 +32,8 @@ struct RecipeDetailsView: View {
                     }
                     .background(.ultraThinMaterial)
                     .cornerRadius(15)
-                    //.padding()
                     
-                    // Create the LazyVGrid
+                    // Create grid view of recipe metrics
                     LazyVGrid(columns: gridItems, spacing: 20) {
                         // First column, first row
                         ForEach(recipe.recipeMetrics, id: \.self) {Metric in
@@ -48,6 +49,7 @@ struct RecipeDetailsView: View {
                     }
                     .padding()  // Add padding around the grid
                     
+                    // Loops through ingredients and displays them in a horizontal scroll view
                     VStack (alignment: .leading){
                         VStack (alignment: .leading){
                             
@@ -74,6 +76,7 @@ struct RecipeDetailsView: View {
                         }
                         .padding([.top, .horizontal])
                         
+                        // Loops through utensils and displays them in a horizontal scroll view
                         VStack (alignment: .leading){
                             
                             Text("Utensils")
@@ -99,6 +102,7 @@ struct RecipeDetailsView: View {
                         }
                         .padding([.top, .horizontal])
                         
+                        // Loops through instructions and displays them in a vertical stack
                         VStack (alignment: .leading){
                             
                             Text("Instructions")
@@ -122,6 +126,7 @@ struct RecipeDetailsView: View {
                         .frame(maxHeight: .infinity, alignment: .top)
                         .padding()
                         
+                        // Displays nutritional information and displays them in a vertical stack
                         Text("Nutritional Information")
                             .font(.title2)
                             .bold()

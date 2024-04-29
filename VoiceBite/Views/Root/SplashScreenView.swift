@@ -16,16 +16,13 @@ struct SplashScreenView: View {
         
         if isActive {
             
-            // Displays recipe search if user is logged in
+            // Displays recipe directory if user is logged in
             if viewModel.userSession != nil {
-                
                 RecipesDirectoryView(recipeManager: RecipeManager())
                 
             // Otherwise, displays login screen
             } else {
-                
                 LoginView()
-                
             }
             
         } else {
@@ -51,6 +48,7 @@ struct SplashScreenView: View {
                     }
                 }
             }
+            // Performs short animation for 1 second before signalling for view to change
             .onAppear {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                     withAnimation {

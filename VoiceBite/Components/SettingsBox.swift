@@ -11,7 +11,7 @@ struct SettingsBox: View {
     let label: String
     let iconColour: Color
     
-    // Creates view of icon and label, formatted horizontally
+    // Creates view of icon and label
     var body: some View {
         HStack(spacing: 12) {
             Image(systemName: imageName)

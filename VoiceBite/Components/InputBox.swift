@@ -16,6 +16,7 @@ struct InputBox: View {
         
         VStack (alignment: .leading, spacing: 12) {
             
+            // Checks if parent view requires a secure text field or a regular one
             if isSecureField{
                 SecureField(placeholder, text: $text)
             } else {

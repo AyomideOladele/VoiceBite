@@ -16,7 +16,7 @@ struct LoginView: View {
         NavigationView {
             VStack{
                 
-                // App Logo
+                // Displays App logo
                 Image("AppLogo")
                     .resizable()
                     .frame(width: 120, height: 120)
@@ -24,12 +24,12 @@ struct LoginView: View {
                     .padding(.bottom, 40)
                     .accessibilityLabel("App Logo")
                 
-                // Welcome Text
+                // Displays welcome text
                 Text("Welcome Back!")
                     .foregroundColor(Color("AccentColor"))
                     .font(.title)
                 
-                // Form Fields
+                // Displays form fields for user data entry
                 VStack(spacing: 20){
                     InputBox(text: $email, placeholder: "Email")
                     .accessibilityLabel("Email")
@@ -39,7 +39,7 @@ struct LoginView: View {
                 .padding(.horizontal, 25)
                 .padding(.vertical, 25)
                 
-                // Login Button
+                // Displays login Button - attempts to sign in users with details entered when clicked
                 Button {
                     Task {
                        try await viewModel.signIn(withEmail: email, password: password)
@@ -72,7 +72,7 @@ struct LoginView: View {
                 // Spaces login button away from navigation link
                 Spacer(minLength: 20.0)
                 
-                // Navigates to signup page by adding it to the stack
+                // Navigates to signup page by adding it to the navigation stack
                 NavigationLink {
                     SignUpView()
                         .navigationBarBackButtonHidden(true)
@@ -90,26 +90,26 @@ struct LoginView: View {
     }
 }
 
-// If user data entry is valid, returns true
+// Checks if user data entry is valid
 extension LoginView: AuthenticationFormProtocol {
     var formIsValid: Bool {
-        // Define the regex pattern to check the email format
+        // Regular expression pattern to check email is in correct format
         let emailRegex = "^[^@]+@[A-Za-z]+\\.[A-Za-z]{2,}$"
         let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
         let emailFormatValid = emailPredicate.evaluate(with: email)
         
-        //let emailFormatValid = email.contains("@") && email.contains(".")
+        // Checks password has at least one number, one capital letter and is over 8 characters
         let passwordHasNumber = password.rangeOfCharacter(from: .decimalDigits) != nil
         let passwordHasCapitalLetter = password.rangeOfCharacter(from: .uppercaseLetters) != nil
         let passwordLengthValid = password.count >= 8
         
+        // Returns true if all conditions are met
         return !email.isEmpty
         && emailFormatValid
         && !password.isEmpty
         && passwordLengthValid
         && passwordHasCapitalLetter
         && passwordHasNumber
-        
     }
 }
 

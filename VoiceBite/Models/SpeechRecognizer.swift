@@ -21,6 +21,7 @@ class SpeechRecognizer: ObservableObject {
         requestPermission()
     }
     
+    // Attempts to restart audio listening session
     func restartAudioBuffer() {
         stopListening()
         do {
@@ -31,6 +32,7 @@ class SpeechRecognizer: ObservableObject {
         }
     }
     
+    // Checks app has permissions from user to use speech recognition and record audio
     func requestPermission() {
         SFSpeechRecognizer.requestAuthorization { authStatus in
             DispatchQueue.main.async {
@@ -57,62 +59,79 @@ class SpeechRecognizer: ObservableObject {
     
     func startListening() throws {
         
-        // Cancel existing recognition task if it exists
+        // Checks if there is an existing recognition task
+        // If there is, it is cancelled and cleared to prevent overlapping speech recognition
         if recognitionTask != nil {
             recognitionTask?.cancel()
             recognitionTask = nil
         }
         
-        // Configure the audio session for recording
+        // Retrieves an instances of AVAudioSession
         let audioSession = AVAudioSession.sharedInstance()
+        
+        // Configures audio session to record incoming audio, reduces processing of background noise, and lowers the volume of any audio playing
         try audioSession.setCategory(.record, mode: .measurement, options: .duckOthers)
+        
+        // Activates audio session, and sets it to notify other audio sessions when it is deactivated
         try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
         
-        // Prepares the recognition request
+        // Creates new instance of speech recognition class
         recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
+        
+        // Sets recognizer to return partial results so processing is done in real time
         recognitionRequest!.shouldReportPartialResults = true
         
-        // Setup audio input node -
+        // Setup microphone to recieve audio for processing
         let inputNode = audioEngine.inputNode
         
-        // Begins recognising audio
+        // Begins a speech recognition task
         recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest!) { [weak self] result, error in
-            var isFinal = false
             
+            var isFinalResult = false 
+            
+            // Checks if speech has been captured and recognised, if so begins handling
             if let result = result {
+                
+                // Processes speech in the main thread
                 DispatchQueue.main.async {
+                    
+                    // Stores the most accurate transcription
                     let newCommand = result.bestTranscription.formattedString
                     
-                    // Updates the recognised command if it's new
+                    // Checks if the new transcription is different from the last one
                     if newCommand != self?.lastProcessedCommand {
-                                    self?.command = newCommand
+                                    self?.command = newCommand // Update command if it's different
                    
-                        // Handle final recognized command
-                        isFinal = result.isFinal
-                            if isFinal{
-                                self?.handleCommand(from: newCommand)
-                                self?.lastProcessedCommand = newCommand
+                        // When a final result is reached, the command is handled
+                        isFinalResult = result.isFinal
+                            if isFinalResult{
+                                self?.command = newCommand // Updates command 
+                                self?.lastProcessedCommand = newCommand // Updates the last processed command
                                 print("DEBUG: Command recognsed \(newCommand)")
                         }
                     }
                 }
             }
+            // If an error occurs, stop listening
             if let error = error {
                     print("DEBUG: Recognition task failed with error: \(error)")
                     DispatchQueue.main.async {
                         self?.restartAudioBuffer()
                     }
-                } else if isFinal {
+                } else if isFinalResult {
                     self?.stopListening()
                 }
         }
         
-        // Install an audio tap on the input node to capture audio.
+        // Stores the recording format of the users microphone
         let recordingFormat = inputNode.outputFormat(forBus: 0)
+        
+        // Installs audio tap on microphone to recieve audio
         inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { [weak self] buffer, when in
             self?.recognitionRequest?.append(buffer)
         }
         
+        // Prepare and begin to start recieving audio - called after all other components are functional
         audioEngine.prepare()
         try audioEngine.start()
         
@@ -120,16 +139,12 @@ class SpeechRecognizer: ObservableObject {
     }
     
     func stopListening() {
+        
+        // Stops audio engine, ends recognition request, and removes audio tap from microphone
         if audioEngine.isRunning {
             audioEngine.stop()
             recognitionRequest?.endAudio()
             audioEngine.inputNode.removeTap(onBus: 0)
-        }
-    }
-
-    // Placeholder for handling recognized commands.
-    private func handleCommand(from text: String) {
-        DispatchQueue.main.async {
         }
     }
 }
